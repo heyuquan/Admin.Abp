@@ -1,13 +1,10 @@
-﻿using Ec.Admin.Domain.AggregateRoot;
+﻿using Ec.Admin.Domain.IRepository;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp;
+using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Domain.Services;
-using Ec.Admin.Domain.IRepository;
-using Volo.Abp.DependencyInjection;
 
 namespace Ec.Admin.Domain.Service
 {

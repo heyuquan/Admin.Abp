@@ -8,12 +8,15 @@ using Volo.Abp.Modularity;
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.OpenApi.Models;
+using Ec.Admin.EntityFrameworkCore;
+using Ec.Admin.Application;
 
 namespace Ec.Admin.HttpApi
 {
     [DependsOn(
-        typeof(AdminApplicationContractsModule),
-        typeof(AbpAutofacModule)
+        typeof(AbpAutofacModule),
+        typeof(AdminApplicationModule),
+        typeof(AdminEntityFrameworkCoreDbMigrationsModule)
         )]
     public class AdminHttpApiModule : AbpModule
     {

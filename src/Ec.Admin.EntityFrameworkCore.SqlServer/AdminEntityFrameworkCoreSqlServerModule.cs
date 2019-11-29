@@ -2,9 +2,6 @@
 using Ec.Admin.Domain.AggregateRoot;
 using Ec.Admin.EntityFrameworkCore.SqlServer.Repository;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 
@@ -27,6 +24,11 @@ namespace Ec.Admin.EntityFrameworkCore.SqlServer
 
                 // 覆盖默认通用仓储
                 options.AddRepository<Role, RoleRepository>();
+            });
+
+            Configure<AbpDbContextOptions>(options =>
+            {
+                options.UseSqlServer();
             });
         }
     }

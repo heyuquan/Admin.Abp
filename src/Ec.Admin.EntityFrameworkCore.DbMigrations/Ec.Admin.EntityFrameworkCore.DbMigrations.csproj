@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Ec.Admin.EntityFrameworkCore.SqlServer\Ec.Admin.EntityFrameworkCore.SqlServer.csproj" />
+  </ItemGroup>
+
 </Project>

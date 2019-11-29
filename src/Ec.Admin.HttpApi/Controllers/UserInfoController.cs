@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Ec.Admin.Application.Contracts;
+﻿using Ec.Admin.Application.Contracts;
 using Ec.Admin.Application.Contracts.DTO;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Ec.Admin.HttpApi.Controllers
 {

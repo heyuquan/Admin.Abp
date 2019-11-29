@@ -20,7 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ec.Admin.Application.Contracts\Ec.Admin.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Ec.Admin.Application\Ec.Admin.Application.csproj" />
+    <ProjectReference Include="..\Ec.Admin.EntityFrameworkCore.DbMigrations\Ec.Admin.EntityFrameworkCore.DbMigrations.csproj" />
   </ItemGroup>
 
 </Project>
