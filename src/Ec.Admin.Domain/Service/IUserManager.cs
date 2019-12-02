@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using Ec.Admin.Domain.AggregateRoot;
+using System.Threading.Tasks;
 
 namespace Ec.Admin.Domain.Service
 {

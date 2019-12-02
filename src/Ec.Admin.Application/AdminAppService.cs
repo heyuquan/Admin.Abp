@@ -1,6 +1,7 @@
 ﻿using Ec.Admin.Application.Contracts;
 using Ec.Admin.Application.Contracts.DTO;
 using Ec.Admin.Domain;
+using Ec.Admin.Domain.AggregateRoot;
 using Ec.Admin.Domain.Service;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Services;

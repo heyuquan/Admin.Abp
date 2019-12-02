@@ -14,5 +14,12 @@ namespace Ec.Admin.EntityFrameworkCore
         public DbSet<Role> Roles { get; set; }
 
         public DbSet<UserInfo> UserInfos { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.ConfigureAdmin();
+        }
     }
 }

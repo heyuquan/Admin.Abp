@@ -14,6 +14,8 @@ namespace Ec.Admin.EntityFrameworkCore
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.ConfigureAdmin();
         }
     }
 }

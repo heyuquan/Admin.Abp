@@ -1,4 +1,5 @@
-﻿using Ec.Admin.Domain.IRepository;
+﻿using Ec.Admin.Domain.AggregateRoot;
+using Ec.Admin.Domain.IRepository;
 using System;
 using System.Threading.Tasks;
 using Volo.Abp;
