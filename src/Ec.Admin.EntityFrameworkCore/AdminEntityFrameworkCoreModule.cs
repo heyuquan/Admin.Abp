@@ -1,17 +1,17 @@
 ﻿using Ec.Admin.Domain;
 using Ec.Admin.Domain.AggregateRoot;
-using Ec.Admin.EntityFrameworkCore.SqlServer.Repository;
+using Ec.Admin.EntityFrameworkCore.Repository;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 
-namespace Ec.Admin.EntityFrameworkCore.SqlServer
+namespace Ec.Admin.EntityFrameworkCore
 {
     [DependsOn(
         typeof(AdminDomainModule),
         typeof(AbpEntityFrameworkCoreModule)
         )]
-    public class AdminEntityFrameworkCoreSqlServerModule : AbpModule
+    public class AdminEntityFrameworkCoreModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {

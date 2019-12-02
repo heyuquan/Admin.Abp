@@ -1,11 +1,10 @@
-﻿using Ec.Admin.EntityFrameworkCore.SqlServer;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Modularity;
 
 namespace Ec.Admin.EntityFrameworkCore
 {
     [DependsOn(
-        typeof(AdminEntityFrameworkCoreSqlServerModule)
+        typeof(AdminEntityFrameworkCoreModule)
         )]
     public class AdminEntityFrameworkCoreDbMigrationsModule:AbpModule
     {

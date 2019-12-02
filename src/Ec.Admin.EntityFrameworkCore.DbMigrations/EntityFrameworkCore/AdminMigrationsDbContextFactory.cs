@@ -1,13 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
-namespace Ec.Admin.EntityFrameworkCore.DbMigrations.EntityFrameworkCore
+namespace Ec.Admin.EntityFrameworkCore
 {
+    /* This class is needed for EF Core console commands
+     * (like Add-Migration and Update-Database commands) */
     public class AdminMigrationsDbContextFactory : IDesignTimeDbContextFactory<AdminMigrationsDbContext>
     {
         public AdminMigrationsDbContext CreateDbContext(string[] args)

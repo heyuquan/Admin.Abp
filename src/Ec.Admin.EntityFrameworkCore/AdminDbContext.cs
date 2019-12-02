@@ -3,7 +3,7 @@ using Ec.Admin.Domain.AggregateRoot;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 
-namespace Ec.Admin.EntityFrameworkCore.SqlServer
+namespace Ec.Admin.EntityFrameworkCore
 {
     public class AdminDbContext : AbpDbContext<AdminDbContext>
     {

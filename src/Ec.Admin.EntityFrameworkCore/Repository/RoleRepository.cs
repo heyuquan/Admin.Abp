@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 
-namespace Ec.Admin.EntityFrameworkCore.SqlServer.Repository
+namespace Ec.Admin.EntityFrameworkCore.Repository
 {
     public class RoleRepository : EfCoreRepository<AdminDbContext, Role, Guid>, IRoleRepository
     {

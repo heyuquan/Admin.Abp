@@ -1,11 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ec.Admin.EntityFrameworkCore.SqlServer\Ec.Admin.EntityFrameworkCore.SqlServer.csproj" />
+    <ProjectReference Include="..\Ec.Admin.EntityFrameworkCore\Ec.Admin.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
 </Project>
