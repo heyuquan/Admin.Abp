@@ -6,15 +6,14 @@ using Volo.Abp.Domain.Entities;
 
 namespace Ec.Admin.Domain.AggregateRoot
 {
-    public class Post
+    public class Post : AggregateRoot<Guid>
     {
-        public Guid PostId { get; set; }
-
         public string Title { get; set; }
+
         public string Content { get; set; }
 
         public Guid BlogId { get; set; }
-        [ForeignKey("BlogId")]
+
         public Blog Blog { get; set; }
     }
 }

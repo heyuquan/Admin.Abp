@@ -1,15 +1,13 @@
-﻿using Ec.Admin.Application.Contracts;
+﻿using Ec.Admin.Application;
+using Ec.Admin.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using Volo.Abp;
+using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Autofac;
 using Volo.Abp.Modularity;
-using Swashbuckle.AspNetCore.Swagger;
-using Swashbuckle.AspNetCore.SwaggerGen;
-using Microsoft.OpenApi.Models;
-using Ec.Admin.EntityFrameworkCore;
-using Ec.Admin.Application;
 
 namespace Ec.Admin.HttpApi
 {
@@ -25,7 +23,16 @@ namespace Ec.Admin.HttpApi
             var hostingEnvironment = context.Services.GetHostingEnvironment();
             var configuration = context.Services.GetConfiguration();
 
+            ConfigureConventionalControllers();
             //ConfigureSwaggerServices(context.Services);
+        }
+
+        private void ConfigureConventionalControllers()
+        {
+            Configure<AbpAspNetCoreMvcOptions>(options =>
+            {
+                options.ConventionalControllers.Create(typeof(AdminApplicationModule).Assembly);
+            });
         }
 
         private void ConfigureSwaggerServices(IServiceCollection services)

@@ -12,7 +12,7 @@ namespace Ec.Admin.Domain.AggregateRoot
         public string Email { get; set; }
 
         public Guid RoleId { get; set; }
-        [ForeignKey("RoleId")]
+
         public Role Role { get; set; }
     }
 }
