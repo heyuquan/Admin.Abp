@@ -21,6 +21,7 @@ namespace Ec.Admin.HttpApi
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                })
+                .UseAutofac();
     }
 }

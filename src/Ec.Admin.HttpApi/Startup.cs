@@ -11,10 +11,7 @@ namespace Ec.Admin.HttpApi
         {
             //services.AddControllers();
 
-            services.AddApplication<AdminHttpApiModule>(options =>
-            {
-                options.UseAutofac();
-            });
+            services.AddApplication<AdminHttpApiModule>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

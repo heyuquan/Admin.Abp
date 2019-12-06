@@ -13,8 +13,7 @@ namespace Ec.Admin.HttpApi
 {
     [DependsOn(
         typeof(AbpAutofacModule),
-        typeof(AdminApplicationModule),
-        typeof(AdminEntityFrameworkCoreDbMigrationsModule)  // 做迁移时依赖
+        typeof(AdminApplicationModule)
         )]
     public class AdminHttpApiModule : AbpModule
     {
