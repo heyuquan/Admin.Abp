@@ -9,8 +9,10 @@ namespace Ec.Admin.Application
     {
         public AdminApplicationAutoMapperProfile()
         {
-            CreateMap<UserInfoDto, UserInfo>()
-                .ForMember(d => d.Name, o => o.MapFrom(s => s.UserName));
+            CreateMap<UserInfo, UserInfoDto>()
+                .ForMember(d => d.UserName, o => o.MapFrom(s => s.Name));
+
+            //CreateMap<UserInfo, UserInfoDto>();
         }
     }
 }

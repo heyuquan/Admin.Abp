@@ -3,10 +3,10 @@ using System.Threading.Tasks;
 
 namespace Ec.Admin.Domain.Service
 {
-    public interface IUserManager
+    public interface IAccountManager
     {
         Task<UserInfo> CreateUserInfo(string name, string email);
 
-        Task DeleteRoleByName(string name);
+        Task<bool> DeleteRoleByName(string name);
     }
 }

@@ -9,6 +9,7 @@ using Volo.Abp.AspNetCore;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc.Client;
 using Volo.Abp.Autofac;
+using Volo.Abp.Http.Client;
 using Volo.Abp.Modularity;
 
 namespace Ec.Admin.HttpApi
@@ -20,7 +21,9 @@ namespace Ec.Admin.HttpApi
         typeof(AbpAspNetCoreModule),
         // 注册 Controller相关服务
         typeof(AbpAspNetCoreMvcModule),
-        typeof(AbpAspNetCoreMvcClientModule)
+        typeof(AdminEntityFrameworkCoreModule)
+        //typeof(AbpAspNetCoreMvcClientModule),
+        //typeof(AbpHttpClientModule)
         )]
     public class AdminHttpApiModule : AbpModule
     {
@@ -30,7 +33,7 @@ namespace Ec.Admin.HttpApi
             var configuration = context.Services.GetConfiguration();
 
             ConfigureConventionalControllers();
-            //ConfigureSwaggerServices(context.Services);
+            ConfigureSwaggerServices(context.Services);
         }
 
         private void ConfigureConventionalControllers()
@@ -65,6 +68,12 @@ namespace Ec.Admin.HttpApi
             app.UseRouting();
 
             //app.UseAuthorization();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Ec.Admin API");
+            });
 
             //app.UseEndpoints(endpoints =>
             //{

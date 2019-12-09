@@ -9,14 +9,14 @@ using Volo.Abp.Domain.Services;
 
 namespace Ec.Admin.Domain.Service
 {
-    public class UserManager : DomainService, IUserManager, ISingletonDependency
+    public class AccountManager : DomainService, IAccountManager, ISingletonDependency
     {
         private readonly IRepository<UserInfo, Guid> _userInfoRepository;
         private readonly IRoleRepository _roleRepository;
 
-        public UserManager(
-            IRepository<UserInfo, Guid> userInfoRpository
-            , IRoleRepository roleRepository)
+        public AccountManager(
+            IRepository<UserInfo, Guid> userInfoRpository,
+             IRoleRepository roleRepository)
         {
             _userInfoRepository = userInfoRpository;
             _roleRepository = roleRepository;
@@ -37,11 +37,13 @@ namespace Ec.Admin.Domain.Service
             return userInfo;
         }
 
-        public async Task DeleteRoleByName(string name)
+        public async Task<bool> DeleteRoleByName(string name)
         {
             Check.NotNullOrEmpty(name, nameof(name));
 
+            //return await Task.FromResult<bool>(true);
             await _roleRepository.DeleteRoleByName(name);
+            return true;
         }
     }
 }
