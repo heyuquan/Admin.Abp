@@ -2,12 +2,13 @@
 using Ec.Admin.Application.Contracts.DTO;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using Volo.Abp.AspNetCore.Mvc;
 
 namespace Ec.Admin.HttpApi.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
-    public class UserInfoController : ControllerBase
+    //[ApiController]
+    public class UserInfoController : AbpController
     {
         private readonly IAdminAppService _adminAppService;
 

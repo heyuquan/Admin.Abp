@@ -5,7 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Volo.Abp;
+using Volo.Abp.AspNetCore;
 using Volo.Abp.AspNetCore.Mvc;
+using Volo.Abp.AspNetCore.Mvc.Client;
 using Volo.Abp.Autofac;
 using Volo.Abp.Modularity;
 
@@ -13,7 +15,12 @@ namespace Ec.Admin.HttpApi
 {
     [DependsOn(
         typeof(AbpAutofacModule),
-        typeof(AdminApplicationModule)
+        typeof(AdminApplicationModule),
+        // 需要依赖框架的 AbpAspNetCoreModule ，进行aspnetcore相关的依赖注入
+        typeof(AbpAspNetCoreModule),
+        // 注册 Controller相关服务
+        typeof(AbpAspNetCoreMvcModule),
+        typeof(AbpAspNetCoreMvcClientModule)
         )]
     public class AdminHttpApiModule : AbpModule
     {
@@ -57,12 +64,14 @@ namespace Ec.Admin.HttpApi
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllers();
+            //});
+
+            app.UseMvcWithDefaultRouteAndArea();
         }
     }
 }

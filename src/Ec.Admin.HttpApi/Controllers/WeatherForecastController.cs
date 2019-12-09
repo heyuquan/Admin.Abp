@@ -4,12 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Volo.Abp.AspNetCore.Mvc;
 
 namespace Ec.Admin.HttpApi.Controllers
 {
-    [ApiController]
+    //[ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class WeatherForecastController : AbpController
     {
         private static readonly string[] Summaries = new[]
         {
