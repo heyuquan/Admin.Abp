@@ -9,7 +9,7 @@ using Volo.Abp.AspNetCore.Mvc;
 namespace Ec.Admin.HttpApi.Controllers
 {
     //[ApiController]
-    [Route("[controller]")]
+    [Route("api/weather")]
     public class WeatherForecastController : AbpController
     {
         private static readonly string[] Summaries = new[]
