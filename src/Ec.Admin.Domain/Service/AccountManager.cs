@@ -22,14 +22,15 @@ namespace Ec.Admin.Domain.Service
             _roleRepository = roleRepository;
         }
 
-        public async Task<UserInfo> CreateUserInfo(string name, string email)
+        public async Task<UserInfo> CreateUserInfo(string name, string email, Guid roleId)
         {
             Check.NotNullOrEmpty(name, nameof(name));
 
             var userInfo = new UserInfo(GuidGenerator.Create())
             {
                 Name = name,
-                Email = email
+                Email = email,
+                RoleId = roleId
             };
 
             await _userInfoRepository.InsertAsync(userInfo);
@@ -44,6 +45,16 @@ namespace Ec.Admin.Domain.Service
             //return await Task.FromResult<bool>(true);
             await _roleRepository.DeleteRoleByName(name);
             return true;
+        }
+
+        public async Task<Role> CreateRole(string name)
+        {
+            Check.NotNullOrEmpty(name, nameof(name));
+            var role = new Role(GuidGenerator.Create())
+            {
+                Name = name
+            };
+            return await _roleRepository.InsertAsync(role);
         }
     }
 }

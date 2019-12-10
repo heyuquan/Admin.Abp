@@ -5,6 +5,8 @@ namespace Ec.Admin.Domain.AggregateRoot
 {
     public class Role : AggregateRoot<Guid>
     {
+        public Role(Guid id) : base(id) { }
+
         public string Name { get; set; }
     }
 }

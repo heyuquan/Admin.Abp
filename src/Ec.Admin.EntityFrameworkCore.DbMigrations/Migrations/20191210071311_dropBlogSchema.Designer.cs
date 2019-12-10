@@ -4,14 +4,16 @@ using Ec.Admin.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ec.Admin.EntityFrameworkCore.DbMigrations.Migrations
 {
     [DbContext(typeof(AdminMigrationsDbContext))]
-    partial class AdminMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191210071311_dropBlogSchema")]
+    partial class dropBlogSchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -17,15 +17,21 @@ namespace Ec.Admin.Application
             _accountManager = accountManager;
         }
 
-        public async Task<UserInfoDto> CreateUser(AccountUserCreateDto userCreateDto)
+        public async Task<UserInfoDto> CreateUser(UserCreateDto userCreateDto)
         {
-            var result = await _accountManager.CreateUserInfo(userCreateDto.UserName, userCreateDto.Email);
+            var result = await _accountManager.CreateUserInfo(userCreateDto.UserName, userCreateDto.Email, userCreateDto.RoleId);
             return ObjectMapper.Map<UserInfo, UserInfoDto>(result);
         }
 
         public async Task<bool> DeleteRoleByName(string name)
         {
             return await _accountManager.DeleteRoleByName(name);
+        }
+
+        public async Task<RoleDto> CreateRole(RoleCreateDto userCreateDto)
+        {
+            var result = await _accountManager.CreateRole(userCreateDto.Name);
+            return ObjectMapper.Map<Role, RoleDto>(result);
         }
     }
 }

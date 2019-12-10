@@ -20,7 +20,6 @@ namespace Ec.Admin.EntityFrameworkCore
                 b.ConfigureByConvention();
             });
 
-
             builder.Entity<UserInfo>(b =>
             {
                 b.ToTable("EcUserInfo");
@@ -31,22 +30,6 @@ namespace Ec.Admin.EntityFrameworkCore
                  .HasForeignKey(p => p.RoleId);
             });
 
-
-            builder.Entity<Blog>(b =>
-            {
-                b.ToTable("EcBlog");
-                b.ConfigureByConvention();
-            });
-
-            builder.Entity<Post>(b =>
-            {
-                b.ToTable("EcPost");
-                b.ConfigureByConvention();
-
-                b.HasOne(p => p.Blog)
-                 .WithMany(b => b.Posts)
-                 .HasForeignKey(p => p.BlogId);
-            });
         }
     }
 }

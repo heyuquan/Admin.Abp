@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Volo.Abp.Domain.Entities;
 
@@ -8,7 +9,9 @@ namespace Ec.Admin.Domain.AggregateRoot
     {
         public UserInfo(Guid id) : base(id) { }
 
+        [Required]
         public string Name { get; set; }
+
         public string Email { get; set; }
 
         public Guid RoleId { get; set; }

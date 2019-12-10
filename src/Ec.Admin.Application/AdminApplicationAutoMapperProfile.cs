@@ -12,7 +12,7 @@ namespace Ec.Admin.Application
             CreateMap<UserInfo, UserInfoDto>()
                 .ForMember(d => d.UserName, o => o.MapFrom(s => s.Name));
 
-            //CreateMap<UserInfo, UserInfoDto>();
+            CreateMap<Role, RoleDto>();
         }
     }
 }

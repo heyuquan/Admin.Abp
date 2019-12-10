@@ -26,16 +26,23 @@ namespace Ec.Admin.HttpApi.Controllers
 
         [HttpPost]
         [Route("user/create")]
-        public async Task<UserInfoDto> Create(AccountUserCreateDto userCreateDto)
+        public async Task<UserInfoDto> CreateUser(UserCreateDto userCreateDto)
         {
             return await _accountAppService.CreateUser(userCreateDto);
         }
 
-        [HttpPost]
+        [HttpDelete]
         [Route("role/delete")]
         public async Task<bool> DeleteRoleByName(string name)
         {
             return await _accountAppService.DeleteRoleByName(name);
+        }
+
+        [HttpPost]
+        [Route("role/create")]
+        public async Task<RoleDto> CreateRole(RoleCreateDto roleCreateDto)
+        {
+            return await _accountAppService.CreateRole(roleCreateDto);
         }
     }
 }
