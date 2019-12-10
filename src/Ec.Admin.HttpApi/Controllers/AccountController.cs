@@ -2,12 +2,12 @@
 using Ec.Admin.Application.Contracts.DTO;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
 
 namespace Ec.Admin.HttpApi.Controllers
 {
     [Route("api/account")]
-    [ApiController]
     public class AccountController : AbpController
     {
         private readonly IAccountAppService _accountAppService;
