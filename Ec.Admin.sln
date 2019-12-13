@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ec.Admin.EntityFrameworkCor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ec.Admin.HttpApi", "src\Ec.Admin.HttpApi\Ec.Admin.HttpApi.csproj", "{5BAF4EA7-3F93-4597-811A-4D4B2FEE2121}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ec.Admin.DbMigrator", "src\Ec.Admin.DbMigrator\Ec.Admin.DbMigrator.csproj", "{39F13191-C066-4B44-8A2F-829FA5C94D79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ec.Admin.DbMigrator", "src\Ec.Admin.DbMigrator\Ec.Admin.DbMigrator.csproj", "{39F13191-C066-4B44-8A2F-829FA5C94D79}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ec.Admin.EntityFrameworkCore", "src\Ec.Admin.EntityFrameworkCore\Ec.Admin.EntityFrameworkCore.csproj", "{EA9CA655-1505-4592-A064-387502C702B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ec.Admin.Domain.Shared", "src\Ec.Admin.Domain.Shared\Ec.Admin.Domain.Shared.csproj", "{06707123-5B04-45FD-862E-533912B1B546}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{EA9CA655-1505-4592-A064-387502C702B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA9CA655-1505-4592-A064-387502C702B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA9CA655-1505-4592-A064-387502C702B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06707123-5B04-45FD-862E-533912B1B546}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06707123-5B04-45FD-862E-533912B1B546}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06707123-5B04-45FD-862E-533912B1B546}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06707123-5B04-45FD-862E-533912B1B546}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

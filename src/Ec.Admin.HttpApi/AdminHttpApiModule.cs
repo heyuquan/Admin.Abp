@@ -1,6 +1,7 @@
 ﻿using Ec.Admin.Application;
 using Ec.Admin.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
@@ -9,6 +10,7 @@ using Volo.Abp.AspNetCore;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc.Client;
 using Volo.Abp.Autofac;
+using Volo.Abp.Caching;
 using Volo.Abp.Http.Client;
 using Volo.Abp.Modularity;
 
@@ -22,8 +24,6 @@ namespace Ec.Admin.HttpApi
         // 注册 Controller相关服务
         typeof(AbpAspNetCoreMvcModule),
         typeof(AdminEntityFrameworkCoreModule)
-        //typeof(AbpAspNetCoreMvcClientModule),
-        //typeof(AbpHttpClientModule)
         )]
     public class AdminHttpApiModule : AbpModule
     {
@@ -33,6 +33,8 @@ namespace Ec.Admin.HttpApi
             var configuration = context.Services.GetConfiguration();
 
             ConfigureConventionalControllers();
+            ConfigureCache(configuration);
+
             ConfigureSwaggerServices(context.Services);
         }
 
@@ -41,6 +43,14 @@ namespace Ec.Admin.HttpApi
             Configure<AbpAspNetCoreMvcOptions>(options =>
             {
                 options.ConventionalControllers.Create(typeof(AdminApplicationModule).Assembly);
+            });
+        }
+
+        private void ConfigureCache(IConfiguration configuration)
+        {
+            Configure<AbpDistributedCacheOptions>(options =>
+            {
+                options.KeyPrefix = "Ec.Admin:";
             });
         }
 
