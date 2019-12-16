@@ -1,9 +1,11 @@
 ﻿using Ec.Admin.Application;
 using Ec.Admin.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
 using Microsoft.OpenApi.Models;
 using Volo.Abp;
 using Volo.Abp.AspNetCore;
@@ -13,6 +15,8 @@ using Volo.Abp.Autofac;
 using Volo.Abp.Caching;
 using Volo.Abp.Http.Client;
 using Volo.Abp.Modularity;
+using StackExchange.Redis;
+using Microsoft.AspNetCore.DataProtection;
 
 namespace Ec.Admin.HttpApi
 {
@@ -23,7 +27,9 @@ namespace Ec.Admin.HttpApi
         typeof(AbpAspNetCoreModule),
         // 注册 Controller相关服务
         typeof(AbpAspNetCoreMvcModule),
-        typeof(AdminEntityFrameworkCoreModule)
+        typeof(AdminEntityFrameworkCoreModule),
+        // 注册cache模块，可以使用volo.Abp.Cache封装的缓存操作接口
+        typeof(AbpCachingModule)
         )]
     public class AdminHttpApiModule : AbpModule
     {
@@ -33,7 +39,9 @@ namespace Ec.Admin.HttpApi
             var configuration = context.Services.GetConfiguration();
 
             ConfigureConventionalControllers();
+
             ConfigureCache(configuration);
+            ConfigureRedis(context, configuration, hostingEnvironment);
 
             ConfigureSwaggerServices(context.Services);
         }
@@ -52,6 +60,26 @@ namespace Ec.Admin.HttpApi
             {
                 options.KeyPrefix = "Ec.Admin:";
             });
+        }
+
+        private void ConfigureRedis(
+            ServiceConfigurationContext context,
+            IConfiguration configuration,
+            IWebHostEnvironment hostingEnvironment
+            )
+        {
+            context.Services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = configuration["Redis:Configuration"];
+            });
+
+            if (!hostingEnvironment.IsDevelopment())
+            {
+                var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]);
+                context.Services
+                    .AddDataProtection()
+                    .PersistKeysToStackExchangeRedis(redis, "Ec.Admin-Protection-Keys");
+            }
         }
 
         private void ConfigureSwaggerServices(IServiceCollection services)
