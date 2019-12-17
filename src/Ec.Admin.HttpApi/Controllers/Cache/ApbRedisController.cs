@@ -11,7 +11,7 @@ namespace Ec.Admin.HttpApi.Controllers
     public class AbpRedisController : AbpController
     {
         // volo.apb.cache key 默认命名为：c:System.String,k:Ec.Admin:abp.key1 
-        // 可重写 NormalizeKey 方法进行调整
+        // 可重写 NormalizeKey 方法进行调整。比如重写为：Ec.Admin:abp.key1 
         private IDistributedCache<string> cache;
 
         public AbpRedisController(IDistributedCache<string> cache)

@@ -1,22 +1,22 @@
 ﻿using Ec.Admin.Application;
 using Ec.Admin.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Caching.StackExchangeRedis;
 using Microsoft.OpenApi.Models;
+using StackExchange.Redis;
+using System;
+using System.Linq;
 using Volo.Abp;
 using Volo.Abp.AspNetCore;
 using Volo.Abp.AspNetCore.Mvc;
-using Volo.Abp.AspNetCore.Mvc.Client;
 using Volo.Abp.Autofac;
 using Volo.Abp.Caching;
-using Volo.Abp.Http.Client;
 using Volo.Abp.Modularity;
-using StackExchange.Redis;
-using Microsoft.AspNetCore.DataProtection;
 
 namespace Ec.Admin.HttpApi
 {
@@ -33,12 +33,15 @@ namespace Ec.Admin.HttpApi
         )]
     public class AdminHttpApiModule : AbpModule
     {
+        private const string DefaultCorsPolicyName = "Default";
+
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             var hostingEnvironment = context.Services.GetHostingEnvironment();
             var configuration = context.Services.GetConfiguration();
 
             ConfigureConventionalControllers();
+            ConfigureCors(context, configuration);
 
             ConfigureCache(configuration);
             ConfigureRedis(context, configuration, hostingEnvironment);
@@ -80,6 +83,30 @@ namespace Ec.Admin.HttpApi
                     .AddDataProtection()
                     .PersistKeysToStackExchangeRedis(redis, "Ec.Admin-Protection-Keys");
             }
+        }        
+
+        private void ConfigureCors(ServiceConfigurationContext context, IConfiguration configuration)
+        {
+            context.Services.AddCors(options =>
+            {
+                options.AddPolicy(DefaultCorsPolicyName, builder =>
+                {
+                    builder
+                        .WithOrigins(
+                            configuration["App:CorsOrigins"]
+                                .Split(",", System.StringSplitOptions.RemoveEmptyEntries)
+                                .Select(o => o.RemovePostFix(""))
+                                .ToArray()
+                        )
+                        .WithAbpExposedHeaders()
+                        // 设置策略的 IsOriginAllowed 属性，使可以匹配一个带通配符的域名
+                        // eg: .WithOrigins("https://*.cnblogs.com", "http://*.cnblogs.com")
+                        .SetIsOriginAllowedToAllowWildcardSubdomains()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials();
+                });
+            });
         }
 
         private void ConfigureSwaggerServices(IServiceCollection services)
@@ -103,8 +130,9 @@ namespace Ec.Admin.HttpApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCorrelationId();
             app.UseRouting();
-
+            app.UseCors(DefaultCorsPolicyName);
             //app.UseAuthorization();
 
             app.UseSwagger();
@@ -112,11 +140,6 @@ namespace Ec.Admin.HttpApi
             {
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "Ec.Admin API");
             });
-
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllers();
-            //});
 
             app.UseMvcWithDefaultRouteAndArea();
         }
