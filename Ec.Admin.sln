@@ -17,7 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ec.Admin.DbMigrator", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ec.Admin.EntityFrameworkCore", "src\Ec.Admin.EntityFrameworkCore\Ec.Admin.EntityFrameworkCore.csproj", "{EA9CA655-1505-4592-A064-387502C702B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ec.Admin.Domain.Shared", "src\Ec.Admin.Domain.Shared\Ec.Admin.Domain.Shared.csproj", "{06707123-5B04-45FD-862E-533912B1B546}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ec.Admin.Domain.Shared", "src\Ec.Admin.Domain.Shared\Ec.Admin.Domain.Shared.csproj", "{06707123-5B04-45FD-862E-533912B1B546}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{049CC62C-CBE6-4C22-9A17-B42755D89083}"
+	ProjectSection(SolutionItems) = preProject
+		doc\architecture instructions.txt = doc\architecture instructions.txt
+		doc\module-layers-and-packages-depends.jpg = doc\module-layers-and-packages-depends.jpg
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
