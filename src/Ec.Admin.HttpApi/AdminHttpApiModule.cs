@@ -51,9 +51,24 @@ namespace Ec.Admin.HttpApi
 
         private void ConfigureConventionalControllers()
         {
+            // 自动API控制器
+            // 如果一个类实现了IRemoteService接口, 那么它会被自动选择为API控制器
+            // [RemoteService(IsEnabled = false)] 禁用自动生成
+            // 默认情况下, HTTP API控制器会自动启用API Explorer,可通过[RemoteService(IsMetadataEnabled = false)]隐藏它
+            // swagger中隐藏服务. 但是它仍然可以被知道确切API路由的客户端使用.
+
+
+            // 包含类 AdminApplicationModule 的程序集中的所有应用程序服务
             Configure<AbpAspNetCoreMvcOptions>(options =>
             {
-                options.ConventionalControllers.Create(typeof(AdminApplicationModule).Assembly);
+                options.ConventionalControllers
+                    .Create(typeof(AdminApplicationModule).Assembly,opts=> {
+                        //路由
+                        //    它始终以 / api开头.
+                        //    接着是路由路径.默认值为"/app", 可以进行如下配置:
+                        // 默认为 api/app/**   可通过下面方式修改
+                        // opts.RootPath = "volosoft/book-store";
+                    });
             });
         }
 

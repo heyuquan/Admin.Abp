@@ -9,6 +9,10 @@ using Volo.Abp.Application.Services;
 
 namespace Ec.Admin.Application
 {
+
+    // 另一个可以直接操作数据的基类 AsyncCrudAppService
+
+
     // [RemoteService(false)]
     // 可以阻止 IRemoteService 接口自动生成 如 /api/app/account/user 的动态接口，swagger UI上会体现
     [RemoteService(false)]
