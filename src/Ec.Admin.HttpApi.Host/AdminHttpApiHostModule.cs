@@ -18,20 +18,21 @@ using Volo.Abp.Autofac;
 using Volo.Abp.Caching;
 using Volo.Abp.Modularity;
 
-namespace Ec.Admin.HttpApi
+namespace Ec.Admin.HttpApi.Host
 {
     [DependsOn(
-        typeof(AbpAutofacModule),
+        typeof(EcAdminHttpApiModule),
         typeof(AdminApplicationModule),
+        typeof(AdminEntityFrameworkCoreModule),
+        typeof(AbpAutofacModule),        
         // 需要依赖框架的 AbpAspNetCoreModule ，进行aspnetcore相关的依赖注入
         typeof(AbpAspNetCoreModule),
         // 注册 Controller相关服务
-        typeof(AbpAspNetCoreMvcModule),
-        typeof(AdminEntityFrameworkCoreModule),
+        typeof(AbpAspNetCoreMvcModule),        
         // 注册cache模块，可以使用volo.Abp.Cache封装的缓存操作接口
         typeof(AbpCachingModule)
         )]
-    public class AdminHttpApiModule : AbpModule
+    public class AdminHttpApiHostModule : AbpModule
     {
         private const string DefaultCorsPolicyName = "Default";
 

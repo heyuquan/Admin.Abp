@@ -30,10 +30,9 @@ https://docs.abp.io/zh-Hans/abp/latest/Best-Practices/Module-Architecture
 HTTP 层
 	Ec.Admin.HttpApi			为模块开发REST风格的HTTP API.
 		HTTP API 包只依赖于 Application.Contracts 包. 不要依赖 Application 包.
-		区别点：目前Ec.Admin依赖了 Application ，因为此项目直接可运行做为WebApi使用。  而Abp创建的模板demo里面是做为模块，将被使用者以模块的方式使用
-		        或者也可以再建一个项目，Ec.Admin.HttpApi.Host 做为WebApi宿主项目，这样子就可以符合Abp官方推荐的最佳实践 
 	Ec.Admin.HttpApi.Client		为HTTP API包提供客户端服务的HTTP API Client包。使用Abp的动态API客户端(Volo.Abp.Http.Client)
 		HTTP API Client 包仅依赖于 Application.Contracts 包.
+	Ec.Admin.HttpApi.Host		WebApi宿主项目
 
 Web 层
 	Ec.Admin.Web	包含页面,视图,脚本,样式,图像和其他UI组件.仅依赖于 HttpApi 包
