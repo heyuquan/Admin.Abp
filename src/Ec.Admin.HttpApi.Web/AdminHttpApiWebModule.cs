@@ -18,7 +18,7 @@ using Volo.Abp.Autofac;
 using Volo.Abp.Caching;
 using Volo.Abp.Modularity;
 
-namespace Ec.Admin.HttpApi.Host
+namespace Ec.Admin.HttpApi.Web
 {
     [DependsOn(
         typeof(EcAdminHttpApiModule),
@@ -32,7 +32,7 @@ namespace Ec.Admin.HttpApi.Host
         // 注册cache模块，可以使用volo.Abp.Cache封装的缓存操作接口
         typeof(AbpCachingModule)
         )]
-    public class AdminHttpApiHostModule : AbpModule
+    public class AdminHttpApiWebModule : AbpModule
     {
         private const string DefaultCorsPolicyName = "Default";
 
@@ -130,7 +130,7 @@ namespace Ec.Admin.HttpApi.Host
             services.AddSwaggerGen(
                 options =>
                 {
-                    options.SwaggerDoc("v1", new OpenApiInfo { Title = "Ec.Admin.HttpApi API", Version = "v1" });
+                    options.SwaggerDoc("v1", new OpenApiInfo { Title = "Ec.Admin.Web API", Version = "v1" });
                     options.DocInclusionPredicate((docName, description) => true);
                     options.CustomSchemaIds(type => type.FullName);
                 });
@@ -154,7 +154,7 @@ namespace Ec.Admin.HttpApi.Host
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Ec.Admin.HttpApi API");
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Ec.Admin.Web API");
             });
 
             app.UseMvcWithDefaultRouteAndArea();

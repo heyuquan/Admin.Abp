@@ -2,7 +2,7 @@
 
 namespace Ec.Admin.HttpApi.Client
 {
-    public class AdminHttpApiClientModule:
+    public class AdminHttpApiClientModule
     {
     }
 }
