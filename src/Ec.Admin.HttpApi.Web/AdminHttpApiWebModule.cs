@@ -21,7 +21,7 @@ using Volo.Abp.Modularity;
 namespace Ec.Admin.HttpApi.Web
 {
     [DependsOn(
-        typeof(EcAdminHttpApiModule),
+        typeof(AdminHttpApiModule),
         typeof(AdminApplicationModule),
         typeof(AdminEntityFrameworkCoreModule),
         typeof(AbpAutofacModule),        

@@ -9,7 +9,7 @@ namespace Ec.Admin.HttpApi
     [DependsOn(
         typeof(AdminApplicationContractsModule)
         )]
-    public class EcAdminHttpApiModule : AbpModule
+    public class AdminHttpApiModule : AbpModule
     {
     }
 }
