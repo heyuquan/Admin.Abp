@@ -14,28 +14,28 @@ abp new Acme.BookStore [--output-folder D:\……]
 模块化架构最佳实践 & 约定
 https://docs.abp.io/zh-Hans/abp/latest/Best-Practices/Module-Architecture
 分层说明================
-应用服务层
-	Ec.Admin.Application				包含应用服务实现.依赖于 Domain 包和 Application.Contracts 包
-	Ec.Admin.Application.Contracts		包含应用服务接口和相关的数据传输对象(DTO).依赖于 Domain.Shared 包
-		
-领域层
-	Ec.Admin.Domain				包含实体, 仓储接口,领域服务接口及其实现和其他领域对象.依赖于 Domain.Shared 包.
-	Ec.Admin.Domain.Shared		包含常量,枚举和其他类型, 它不能包含实体,存储库,域服务或任何其他业务对象. 可以安全地与模块中的所有层使用. 此包也可以与第三方客户端使用.
+Web 层(Presentation Layer)
+	Ec.Admin.Web	包含页面,视图,脚本,样式,图像和其他UI组件.仅依赖于 HttpApi 包
 
-基础设施层
-	Ec.Admin.EntityFrameworkCore		数据仓库，包含DbContext、Repository的实现
-	Ec.Admin.EntityFrameworkCore.DbMigrations	数据迁移代码
-	Ec.Admin.DbMigrator					控制台程序，数据迁移执行者
-
-HTTP 层
+HTTP 层(Distributed Services Layers)
 	Ec.Admin.HttpApi			为模块开发REST风格的HTTP API.
 		HTTP API 包只依赖于 Application.Contracts 包. 不要依赖 Application 包.
 	Ec.Admin.HttpApi.Client		为HTTP API包提供客户端服务的HTTP API Client包。使用Abp的动态API客户端(Volo.Abp.Http.Client)
 		HTTP API Client 包仅依赖于 Application.Contracts 包.
 	Ec.Admin.HttpApi.Host		WebApi宿主项目
 
-Web 层
-	Ec.Admin.Web	包含页面,视图,脚本,样式,图像和其他UI组件.仅依赖于 HttpApi 包
+应用服务层(Application Layer)
+	Ec.Admin.Application				包含应用服务实现.依赖于 Domain 包和 Application.Contracts 包
+	Ec.Admin.Application.Contracts		包含应用服务接口和相关的数据传输对象(DTO).依赖于 Domain.Shared 包
+		
+领域层(Domain Layer)
+	Ec.Admin.Domain				包含实体, 仓储接口,领域服务接口及其实现和其他领域对象.依赖于 Domain.Shared 包.
+	Ec.Admin.Domain.Shared		包含常量,枚举和其他类型, 它不能包含实体,存储库,域服务或任何其他业务对象. 可以安全地与模块中的所有层使用. 此包也可以与第三方客户端使用.
+
+基础设施层(Infrastructure Layer)
+	Ec.Admin.EntityFrameworkCore		数据仓库，包含DbContext、Repository的实现
+	Ec.Admin.EntityFrameworkCore.DbMigrations	数据迁移代码
+	Ec.Admin.DbMigrator					控制台程序，数据迁移执行者
 
 
 依赖注入=========
