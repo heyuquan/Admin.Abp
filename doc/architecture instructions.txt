@@ -1,3 +1,19 @@
+ABP框架的主要目标之一就是提供便捷的基础设施来创建微服务解决方案
+有两种类型的模块
+框架模块: 这些是 框架的核心模块,像缓存,邮件,主题,安全性,序列化,验证,Ef Core集成,MongoDB集成...等等. 它们没有应用程序/业务功能,但通过提供通用基础架构,集成和抽象会使你的日常开发更加容易.
+应用程序模块: 这些模块是实现特定的应用程序/业务功能,像 博客, 文档管理, 身份管理, 租户管理... 等等. 它是通常有自己的实体,服务,API和UI组件.
+	Account: 用于用户登录/注册应用程序.
+	Audit Logging: 用于将审计日志持久化到数据库.
+	Background Jobs: 用于在使用默认后台作业管理器时保存后台作业.
+	Blogging: 用于创建精美的博客. ABP的博客 就使用了此模块.
+	Docs: 用于创建技术文档页面. ABP的文档 就使用了此模块.
+	Identity: 用于管理角色,用户和他们的权限.
+	Identity Server: 集成了IdentityServer4.
+	Permission Management: 用于保存权限.
+	Setting Management: 用于保存设置.
+	Tenant Management: 用于管理多租户应用程序的租户.
+	Users: 用于抽象用户, 因此其他模块可以依赖此模块而不是Identity模块.
+
 Abp Cli==================
 dotnet tool install -g Volo.Abp.Cli
 dotnet tool update -g Volo.Abp.Cli
