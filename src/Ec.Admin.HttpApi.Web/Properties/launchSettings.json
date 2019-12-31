@@ -1,0 +1,12 @@
+﻿{
+  "profiles": {
+    "Ec.Admin.HttpApi.Web": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:59964",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

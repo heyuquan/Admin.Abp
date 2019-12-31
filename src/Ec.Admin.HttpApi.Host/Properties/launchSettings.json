@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Ec.Admin.HttpApi.Host": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production" // Development  // Staging // Production
+      },
+      "applicationUrl": "http://localhost:59954/"
+    }
+  }
+}
