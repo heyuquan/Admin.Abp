@@ -3,13 +3,18 @@ using Ec.Admin.Domain.AggregateRoot;
 using Ec.Admin.EntityFrameworkCore.Repository;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.Identity.EntityFrameworkCore;
 using Volo.Abp.Modularity;
+using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 
 namespace Ec.Admin.EntityFrameworkCore
 {
     [DependsOn(
         typeof(AdminDomainModule),
-        typeof(AbpEntityFrameworkCoreModule)
+        typeof(AbpEntityFrameworkCoreModule),
+        // module
+        typeof(AbpIdentityEntityFrameworkCoreModule),
+        typeof(AbpPermissionManagementEntityFrameworkCoreModule)
         )]
     public class AdminEntityFrameworkCoreModule : AbpModule
     {

@@ -16,6 +16,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System.IO;
 using Volo.Abp;
+using Volo.Abp.Account.Web;
 using Volo.Abp.AspNetCore;
 using Volo.Abp.AspNetCore.MultiTenancy;
 using Volo.Abp.AspNetCore.Mvc;
@@ -27,8 +28,10 @@ using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
 using Volo.Abp.Autofac;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Caching;
+using Volo.Abp.Identity.Web;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
+using Volo.Abp.PermissionManagement.Web;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
@@ -44,6 +47,7 @@ namespace Ec.Admin.Web
         typeof(AbpAspNetCoreModule),
         // 注册 Controller相关服务
         typeof(AbpAspNetCoreMvcModule),
+        // 注册ui相关（abp扩展taghelper、多租户、bundling、ui主题）
         typeof(AbpAspNetCoreMvcUiBootstrapModule),
         typeof(AbpAspNetCoreMultiTenancyModule),
         typeof(AbpAspNetCoreMvcUiBundlingModule),
@@ -51,7 +55,11 @@ namespace Ec.Admin.Web
         // 注册cache模块，可以使用volo.Abp.Cache封装的缓存操作接口
         typeof(AbpCachingModule),
         // 多语言
-        typeof(AbpLocalizationModule)
+        typeof(AbpLocalizationModule),
+        // module
+        typeof(AbpAccountWebModule),
+        typeof(AbpIdentityWebModule),
+        typeof(AbpPermissionManagementWebModule)
         )]
     public class AdminWebModule : AbpModule
     {

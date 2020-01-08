@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ec.Admin.Application\Ec.Admin.Application.csproj" />
+    <ProjectReference Include="..\Ec.Admin.EntityFrameworkCore.DbMigrations\Ec.Admin.EntityFrameworkCore.DbMigrations.csproj" />
     <ProjectReference Include="..\Ec.Admin.EntityFrameworkCore\Ec.Admin.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\Ec.Admin.HttpApi\Ec.Admin.HttpApi.csproj" />
   </ItemGroup>
