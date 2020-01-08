@@ -41,7 +41,7 @@ namespace Ec.Admin.HttpApi.Host
             var hostingEnvironment = context.Services.GetHostingEnvironment();
             var configuration = context.Services.GetConfiguration();
 
-            ConfigureConventionalControllers();
+            ConfigureAutoApiControllers();
             ConfigureCors(context, configuration);
 
             ConfigureCache(configuration);
@@ -50,7 +50,7 @@ namespace Ec.Admin.HttpApi.Host
             ConfigureSwaggerServices(context.Services);
         }
 
-        private void ConfigureConventionalControllers()
+        private void ConfigureAutoApiControllers()
         {
             // 自动API控制器
             // 如果一个类实现了IRemoteService接口, 那么它会被自动选择为API控制器
@@ -141,12 +141,13 @@ namespace Ec.Admin.HttpApi.Host
             var app = context.GetApplicationBuilder();
             var env = context.GetEnvironment();
 
+            app.UseCorrelationId();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseCorrelationId();
+            
             app.UseRouting();
             app.UseCors(DefaultCorsPolicyName);
             //app.UseAuthorization();

@@ -27,9 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ec.Admin.HttpApi.Host", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ec.Admin.HttpApi", "src\Ec.Admin.HttpApi\Ec.Admin.HttpApi.csproj", "{C414EF3C-AE6A-4FAF-A1D7-60B304B2D8D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ec.Admin.HttpApi.Client", "src\Ec.Admin.HttpApi.Client\Ec.Admin.HttpApi.Client.csproj", "{1B6AB03D-EB74-45BE-9A63-9AEAE9FA6D23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ec.Admin.HttpApi.Client", "src\Ec.Admin.HttpApi.Client\Ec.Admin.HttpApi.Client.csproj", "{1B6AB03D-EB74-45BE-9A63-9AEAE9FA6D23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ec.Admin.HttpApi.Web", "src\Ec.Admin.HttpApi.Web\Ec.Admin.HttpApi.Web.csproj", "{C16088AD-C29B-4CAA-AC46-DC7B5A03D241}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ec.Admin.Web", "src\Ec.Admin.Web\Ec.Admin.Web.csproj", "{0CCA7E1A-7E1D-48D4-A5B8-C57B2C0CCCA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,10 +77,10 @@ Global
 		{1B6AB03D-EB74-45BE-9A63-9AEAE9FA6D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B6AB03D-EB74-45BE-9A63-9AEAE9FA6D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B6AB03D-EB74-45BE-9A63-9AEAE9FA6D23}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C16088AD-C29B-4CAA-AC46-DC7B5A03D241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C16088AD-C29B-4CAA-AC46-DC7B5A03D241}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C16088AD-C29B-4CAA-AC46-DC7B5A03D241}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C16088AD-C29B-4CAA-AC46-DC7B5A03D241}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CCA7E1A-7E1D-48D4-A5B8-C57B2C0CCCA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CCA7E1A-7E1D-48D4-A5B8-C57B2C0CCCA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CCA7E1A-7E1D-48D4-A5B8-C57B2C0CCCA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CCA7E1A-7E1D-48D4-A5B8-C57B2C0CCCA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
