@@ -84,6 +84,7 @@ namespace Ec.Admin.Web
             var configuration = context.Services.GetConfiguration();
 
             ConfigureUrls(configuration);
+            ConfigureIdentityAuthentication(context, configuration);
             ConfigAutoMapper();
             ConfigureVirtualFileSystem(hostingEnvironment);
             ConfigureLocalizationServices();
@@ -100,9 +101,20 @@ namespace Ec.Admin.Web
             });
         }
 
-        private void ConfigureAuthentication(ServiceConfigurationContext context, IConfiguration configuration)
+        private void ConfigureIdentityAuthentication(ServiceConfigurationContext context, IConfiguration configuration)
         {
+            // 有如下AbpIdentity定义后，还需要在 OnApplicationInitialization 中调用：app.UseAuthentication();
+            context.Services.AddAbpIdentity();
 
+            context.Services.ConfigureApplicationCookie(options =>
+            {
+                // Cookie settings
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = System.TimeSpan.FromMinutes(5);
+
+                options.LoginPath = "/Account/Login";               
+                options.SlidingExpiration = true;
+            });            
         }
 
         private void ConfigAutoMapper()
@@ -204,6 +216,9 @@ namespace Ec.Admin.Web
             
             app.UseVirtualFiles();
             app.UseRouting();
+            // 认证
+            app.UseAuthentication();
+            // 授权
             //app.UseAuthorization();
 
             if (MultiTenancyConsts.IsEnabled)
