@@ -3,7 +3,7 @@
     "Ec.Admin.Web": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:59964",
+      "applicationUrl": "https://localhost:50046",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

@@ -10,6 +10,7 @@ using Ec.Admin.Web.Menus;
 using Localization.Resources.AbpUi;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -84,7 +85,7 @@ namespace Ec.Admin.Web
             var configuration = context.Services.GetConfiguration();
 
             ConfigureUrls(configuration);
-            ConfigureIdentityAuthentication(context, configuration);
+            ConfigureIdentityCookieAuthentication(context, configuration);
             ConfigAutoMapper();
             ConfigureVirtualFileSystem(hostingEnvironment);
             ConfigureLocalizationServices();
@@ -101,7 +102,7 @@ namespace Ec.Admin.Web
             });
         }
 
-        private void ConfigureIdentityAuthentication(ServiceConfigurationContext context, IConfiguration configuration)
+        private void ConfigureIdentityCookieAuthentication(ServiceConfigurationContext context, IConfiguration configuration)
         {
             // 有如下AbpIdentity定义后，还需要在 OnApplicationInitialization 中调用：app.UseAuthentication();
             context.Services.AddAbpIdentity();
@@ -110,11 +111,12 @@ namespace Ec.Admin.Web
             {
                 // Cookie settings
                 options.Cookie.HttpOnly = true;
+                options.Cookie.SameSite = SameSiteMode.None;
                 options.ExpireTimeSpan = System.TimeSpan.FromMinutes(5);
 
-                options.LoginPath = "/Account/Login";               
+                options.LoginPath = "/Account/Login";
                 options.SlidingExpiration = true;
-            });            
+            });
         }
 
         private void ConfigAutoMapper()
@@ -213,7 +215,7 @@ namespace Ec.Admin.Web
             {
                 app.UseErrorPage();
             }
-            
+
             app.UseVirtualFiles();
             app.UseRouting();
             // 认证
