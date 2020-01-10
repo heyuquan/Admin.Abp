@@ -221,7 +221,7 @@ namespace Ec.Admin.Web
             // 认证
             app.UseAuthentication();
             // 授权
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
             if (MultiTenancyConsts.IsEnabled)
             {
