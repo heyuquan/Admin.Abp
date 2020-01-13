@@ -1,9 +1,11 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 
@@ -15,14 +17,21 @@ namespace Ec.Admin.Domain.Migration
 
         private readonly IDataSeeder _dataSeeder;
         private readonly IAdminDbSchemaMigrator _dbSchemaMigrator;
+        // 数据种子，方便调试查看数据
+        private readonly AbpDataSeedOptions _sendOptions;
+        private readonly AbpPermissionOptions _pmsOptions;
 
         public AdminDbMigrationService(
             IDataSeeder dataSeeder,
-            IAdminDbSchemaMigrator dbSchemaMigrator
+            IAdminDbSchemaMigrator dbSchemaMigrator,
+            IOptionsMonitor<AbpDataSeedOptions> sendOptions,
+            IOptionsMonitor<AbpPermissionOptions> pmsOptions
             ) 
         {
             _dataSeeder = dataSeeder;
             _dbSchemaMigrator = dbSchemaMigrator;
+            _sendOptions = sendOptions.CurrentValue;
+            _pmsOptions = pmsOptions.CurrentValue;
 
             Logger = NullLogger<AdminDbMigrationService>.Instance;
         }

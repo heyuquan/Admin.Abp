@@ -1,4 +1,5 @@
-﻿using Ec.Admin.EntityFrameworkCore;
+﻿using Ec.Admin.Application.Contracts;
+using Ec.Admin.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,9 +9,15 @@ using Volo.Abp.Modularity;
 
 namespace Ec.Admin.DbMigrator
 {
+    // 引入 Ec.Admin.Application.Contracts 的原因
+    // 因为它 引入了 Volo.Abp.Identity.Application.Contracts
+    // 其中 IdentityPermissionDefinitionProvider.cs 文件定义了默认权限，需要依赖注入到程序中
+
+
     [DependsOn(
         typeof(AbpAutofacModule),
-        typeof(AdminEntityFrameworkCoreDbMigrationsModule)
+        typeof(AdminApplicationContractsModule),
+        typeof(AdminEntityFrameworkCoreDbMigrationsModule)        
         )]
     public class AdminDbMigratorModule : AbpModule
     {
