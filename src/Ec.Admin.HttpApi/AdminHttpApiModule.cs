@@ -2,6 +2,7 @@
 using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement.HttpApi;
+using Volo.Abp.TenantManagement;
 
 namespace Ec.Admin
 {
@@ -10,7 +11,8 @@ namespace Ec.Admin
         // module
         typeof(AbpAccountHttpApiModule),
         typeof(AbpIdentityHttpApiModule),
-        typeof(AbpPermissionManagementHttpApiModule)
+        typeof(AbpPermissionManagementHttpApiModule),
+        typeof(AbpTenantManagementHttpApiModule)
         )]
     public class AdminHttpApiModule : AbpModule
     {

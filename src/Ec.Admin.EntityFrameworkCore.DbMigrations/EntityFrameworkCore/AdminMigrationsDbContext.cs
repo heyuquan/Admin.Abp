@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Identity;
 using Volo.Abp.Identity.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
+using Volo.Abp.TenantManagement.EntityFrameworkCore;
 
 namespace Ec.Admin.EntityFrameworkCore
 {
@@ -25,8 +27,10 @@ namespace Ec.Admin.EntityFrameworkCore
             builder.ConfigureAdmin();
 
             /* Include modules to your migration db context */
+            builder.ConfigureAuditLogging();
             builder.ConfigureIdentity();
             builder.ConfigurePermissionManagement();
+            builder.ConfigureTenantManagement();
 
             /* Configure customizations for entities from the modules included  */
             builder.Entity<IdentityUser>(b =>

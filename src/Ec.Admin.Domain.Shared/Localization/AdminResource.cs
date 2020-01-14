@@ -2,7 +2,7 @@
 
 namespace Ec.Admin.Localization
 {
-    [LocalizationResourceName("Ec.Admin")]
+    [LocalizationResourceName("EcAdmin")]
     public class AdminResource
     {
     }

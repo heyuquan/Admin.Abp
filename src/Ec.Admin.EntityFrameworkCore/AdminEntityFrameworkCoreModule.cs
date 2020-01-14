@@ -1,10 +1,12 @@
 ﻿using Ec.Admin.AggregateRoot;
 using Ec.Admin.Repository;
 using Microsoft.Extensions.DependencyInjection;
+using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Identity.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
+using Volo.Abp.TenantManagement.EntityFrameworkCore;
 
 namespace Ec.Admin
 {
@@ -12,8 +14,10 @@ namespace Ec.Admin
         typeof(AdminDomainModule),
         typeof(AbpEntityFrameworkCoreModule),
         // module
+        typeof(AbpAuditLoggingEntityFrameworkCoreModule),
         typeof(AbpIdentityEntityFrameworkCoreModule),
-        typeof(AbpPermissionManagementEntityFrameworkCoreModule)
+        typeof(AbpPermissionManagementEntityFrameworkCoreModule),
+        typeof(AbpTenantManagementEntityFrameworkCoreModule)
         )]
     public class AdminEntityFrameworkCoreModule : AbpModule
     {

@@ -27,6 +27,7 @@ using Volo.Abp.Identity.Web;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement.Web;
+using Volo.Abp.TenantManagement.Web;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
@@ -55,7 +56,8 @@ namespace Ec.Admin
         // module
         typeof(AbpAccountWebModule),
         typeof(AbpIdentityWebModule),
-        typeof(AbpPermissionManagementWebModule)
+        typeof(AbpPermissionManagementWebModule),
+        typeof(AbpTenantManagementWebModule)
         )]
     public class AdminWebModule : AbpModule
     {
@@ -231,6 +233,7 @@ namespace Ec.Admin
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "Ec.Admin.Web API");
             });
 
+            app.UseAuditing();
             app.UseMvcWithDefaultRouteAndArea();
         }
     }

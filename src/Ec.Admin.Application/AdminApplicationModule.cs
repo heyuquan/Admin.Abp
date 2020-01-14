@@ -4,6 +4,7 @@ using Volo.Abp.AutoMapper;
 using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement;
+using Volo.Abp.TenantManagement;
 
 namespace Ec.Admin
 {
@@ -14,7 +15,8 @@ namespace Ec.Admin
         // module
         typeof(AbpAccountApplicationModule),
         typeof(AbpIdentityApplicationModule),
-        typeof(AbpPermissionManagementApplicationModule)
+        typeof(AbpPermissionManagementApplicationModule),
+        typeof(AbpTenantManagementApplicationModule)
         )]
     public class AdminApplicationModule : AbpModule
     {
