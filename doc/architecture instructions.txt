@@ -53,6 +53,13 @@ HTTP 层(Distributed Services Layers)
 	Ec.Admin.EntityFrameworkCore.DbMigrations	数据迁移代码
 	Ec.Admin.DbMigrator					控制台程序，数据迁移执行者
 
+除了
+Ec.Admin.Application.Contracts
+Ec.Admin.Domain.Shared
+设置为 netstandard2.1
+
+其他项目都设置为netcoreapp3.1
+
 
 依赖注入=========
 固有的注册类型
