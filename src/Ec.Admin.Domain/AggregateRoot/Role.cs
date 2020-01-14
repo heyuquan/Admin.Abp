@@ -1,7 +1,7 @@
 ﻿using System;
 using Volo.Abp.Domain.Entities;
 
-namespace Ec.Admin.Domain.AggregateRoot
+namespace Ec.Admin.AggregateRoot
 {
     public class Role : AggregateRoot<Guid>
     {

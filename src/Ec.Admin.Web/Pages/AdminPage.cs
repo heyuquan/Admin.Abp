@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc.Localization;
+﻿using Ec.Admin.Localization;
+using Microsoft.AspNetCore.Mvc.Localization;
 using Microsoft.AspNetCore.Mvc.Razor.Internal;
-using Ec.Admin.Domain.Shared.Localization;
 using Volo.Abp.AspNetCore.Mvc.UI.RazorPages;
 
-namespace Ec.Admin.Web.Pages
+namespace Ec.Admin.Pages
 {
     /* Inherit your UI Pages from this class. To do that, add this line to your Pages (.cshtml files under the Page folder):
      * @inherits BlogStore.Web.Pages.BlogStorePage

@@ -3,7 +3,7 @@ using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement;
 
-namespace Ec.Admin.Application.Contracts
+namespace Ec.Admin
 {
     [DependsOn(
         // module

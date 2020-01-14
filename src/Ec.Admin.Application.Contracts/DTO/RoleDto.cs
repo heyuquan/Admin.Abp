@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Volo.Abp.Application.Dtos;
 
-namespace Ec.Admin.Application.Contracts.DTO
+namespace Ec.Admin.DTO
 {
     public class RoleDto : EntityDto<Guid>
     {

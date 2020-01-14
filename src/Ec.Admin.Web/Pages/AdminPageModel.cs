@@ -1,7 +1,7 @@
-﻿using Ec.Admin.Domain.Shared.Localization;
+﻿using Ec.Admin.Localization;
 using Volo.Abp.AspNetCore.Mvc.UI.RazorPages;
 
-namespace Ec.Admin.Web.Pages
+namespace Ec.Admin.Pages
 {
     /* Inherit your PageModel classes from this class.
      */

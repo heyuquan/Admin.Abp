@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Ec.Admin.Domain.Migration
+namespace Ec.Admin.Migrations
 {
     public interface IAdminDbSchemaMigrator
     {

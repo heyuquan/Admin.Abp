@@ -1,8 +1,8 @@
-﻿using Ec.Admin.Domain.AggregateRoot;
+﻿using Ec.Admin.AggregateRoot;
 using System;
 using System.Threading.Tasks;
 
-namespace Ec.Admin.Domain.Service
+namespace Ec.Admin.Service
 {
     public interface IAccountManager
     {

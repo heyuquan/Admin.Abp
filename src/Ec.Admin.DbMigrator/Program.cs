@@ -1,10 +1,9 @@
-﻿using Ec.Admin.Domain.Migration;
+﻿using Ec.Admin.Migrations;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 using Volo.Abp;
 using Volo.Abp.Threading;
 
-namespace Ec.Admin.DbMigrator
+namespace Ec.Admin
 {
     class Program
     {

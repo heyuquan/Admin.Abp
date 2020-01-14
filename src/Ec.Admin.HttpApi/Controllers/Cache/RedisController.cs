@@ -4,7 +4,7 @@ using System;
 using System.Threading.Tasks;
 using Volo.Abp.AspNetCore.Mvc;
 
-namespace Ec.Admin.HttpApi.Controllers
+namespace Ec.Admin.Controllers.Cache
 {
     [Route("api/redis")]
     public class RedisController : AbpController

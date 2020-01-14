@@ -1,11 +1,9 @@
-﻿using Ec.Admin.Application.Contracts;
-using System;
-using Volo.Abp.Account;
+﻿using Volo.Abp.Account;
 using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement;
 
-namespace Ec.Admin.HttpApi.Client
+namespace Ec.Admin
 {
     [DependsOn(
         typeof(AdminApplicationContractsModule),

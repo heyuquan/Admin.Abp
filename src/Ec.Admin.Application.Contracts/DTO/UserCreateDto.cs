@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Ec.Admin.Application.Contracts.DTO
+namespace Ec.Admin.DTO
 {
     public class UserCreateDto
     {

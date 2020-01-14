@@ -1,12 +1,12 @@
-﻿using Ec.Admin.Domain.Shared.Localization;
-using Ec.Admin.Domain.Shared.MultiTenancy;
+﻿using Ec.Admin.Localization;
+using Ec.Admin.MultiTenancy;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Localization;
 using System.Threading.Tasks;
 using Volo.Abp.TenantManagement.Web.Navigation;
 using Volo.Abp.UI.Navigation;
 
-namespace Ec.Admin.Web.Menus
+namespace Ec.Admin.Menus
 {
     public class AdminMenuContributor : IMenuContributor
     {

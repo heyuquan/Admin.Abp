@@ -1,9 +1,8 @@
-﻿using Ec.Admin.Domain;
-using Ec.Admin.Domain.AggregateRoot;
+﻿using Ec.Admin.AggregateRoot;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 
-namespace Ec.Admin.EntityFrameworkCore
+namespace Ec.Admin
 {
     public class AdminDbContext : AbpDbContext<AdminDbContext>
     {

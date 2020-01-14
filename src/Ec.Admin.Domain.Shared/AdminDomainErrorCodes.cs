@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Ec.Admin.Domain.Shared
+﻿namespace Ec.Admin
 {
     public class AdminDomainErrorCodes
     {

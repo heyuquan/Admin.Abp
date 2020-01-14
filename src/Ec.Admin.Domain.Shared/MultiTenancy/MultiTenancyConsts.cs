@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Ec.Admin.Domain.Shared.MultiTenancy
+﻿namespace Ec.Admin.MultiTenancy
 {
     public static class MultiTenancyConsts
     {
@@ -10,6 +6,6 @@ namespace Ec.Admin.Domain.Shared.MultiTenancy
          * If you will never need to multi-tenancy, you can remove
          * related modules and code parts, including this file.
          */
-        public const bool IsEnabled = false;
+        public const bool IsEnabled = true;
     }
 }

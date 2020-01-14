@@ -1,7 +1,7 @@
 ﻿using System;
 using Volo.Abp.Application.Dtos;
 
-namespace Ec.Admin.Application.Contracts.DTO
+namespace Ec.Admin.DTO
 {
     public class UserInfoDto : EntityDto<Guid>
     {

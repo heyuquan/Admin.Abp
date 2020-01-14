@@ -1,13 +1,12 @@
-﻿using Ec.Admin.Domain;
-using Ec.Admin.Domain.AggregateRoot;
-using Ec.Admin.EntityFrameworkCore.Repository;
+﻿using Ec.Admin.AggregateRoot;
+using Ec.Admin.Repository;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Identity.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 
-namespace Ec.Admin.EntityFrameworkCore
+namespace Ec.Admin
 {
     [DependsOn(
         typeof(AdminDomainModule),

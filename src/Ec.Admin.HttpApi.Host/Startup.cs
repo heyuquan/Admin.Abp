@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Volo.Abp;
 
-namespace Ec.Admin.HttpApi.Host
+namespace Ec.Admin
 {
     public class Startup
     {

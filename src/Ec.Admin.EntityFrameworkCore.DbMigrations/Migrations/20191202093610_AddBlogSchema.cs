@@ -1,12 +1,13 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Ec.Admin.EntityFrameworkCore.DbMigrations.Migrations
+namespace Ec.Admin.Migrations
 {
     public partial class AddBlogSchema : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            
             migrationBuilder.CreateTable(
                 name: "EcBlog",
                 columns: table => new

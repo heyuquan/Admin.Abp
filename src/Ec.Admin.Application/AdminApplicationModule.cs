@@ -1,13 +1,11 @@
-﻿using Ec.Admin.Application.Contracts;
-using Ec.Admin.Domain;
-using Volo.Abp.AutoMapper;
-using Volo.Abp.Modularity;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Account;
+using Volo.Abp.AutoMapper;
 using Volo.Abp.Identity;
+using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement;
 
-namespace Ec.Admin.Application
+namespace Ec.Admin
 {
     [DependsOn(
         typeof(AdminApplicationContractsModule),

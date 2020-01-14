@@ -1,8 +1,8 @@
-﻿using Ec.Admin.Application.Contracts.DTO;
+﻿using Ec.Admin.DTO;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Services;
 
-namespace Ec.Admin.Application.Contracts
+namespace Ec.Admin
 {
     public interface IAccountAppService: IApplicationService
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Ec.Admin.EntityFrameworkCore.DbMigrations.Migrations
+namespace Ec.Admin.Migrations
 {
     public partial class addAbpIdentitySchemal : Migration
     {

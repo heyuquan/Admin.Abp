@@ -1,11 +1,9 @@
-﻿using Ec.Admin.Application.Contracts;
-using Ec.Admin.Application.Contracts.DTO;
+﻿using Ec.Admin.DTO;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
 
-namespace Ec.Admin.HttpApi.Controllers
+namespace Ec.Admin.Controllers
 {
     [Route("api/account")]
     public class AccountController : AbpController

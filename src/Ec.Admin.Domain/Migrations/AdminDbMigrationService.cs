@@ -1,15 +1,12 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 
-namespace Ec.Admin.Domain.Migration
+namespace Ec.Admin.Migrations
 {
     public class AdminDbMigrationService : ITransientDependency
     {

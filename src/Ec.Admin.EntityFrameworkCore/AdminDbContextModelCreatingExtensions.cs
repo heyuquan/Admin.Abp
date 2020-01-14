@@ -1,11 +1,11 @@
-﻿using Ec.Admin.Domain.AggregateRoot;
+﻿using Ec.Admin.AggregateRoot;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore.Modeling;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Volo.Abp.Users;
 
-namespace Ec.Admin.EntityFrameworkCore
+namespace Ec.Admin
 {
     // HasOne 或 HasMany 标识配置实体类型上的导航属性。 
     // 然后，调用 WithOne 或 WithMany 来标识反向导航

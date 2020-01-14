@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace Ec.Admin.Web
+namespace Ec.Admin
 {
     public class AdminWebAutoMapperProfile : Profile
     {

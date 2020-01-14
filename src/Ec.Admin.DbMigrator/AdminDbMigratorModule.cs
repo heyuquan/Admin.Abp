@@ -1,13 +1,9 @@
-﻿using Ec.Admin.Application.Contracts;
-using Ec.Admin.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Ec.Admin.EntityFrameworkCore;
 using Volo.Abp.Autofac;
 using Volo.Abp.BackgroundJobs;
 using Volo.Abp.Modularity;
 
-namespace Ec.Admin.DbMigrator
+namespace Ec.Admin
 {
     // 引入 Ec.Admin.Application.Contracts 的原因
     // 因为它 引入了 Volo.Abp.Identity.Application.Contracts

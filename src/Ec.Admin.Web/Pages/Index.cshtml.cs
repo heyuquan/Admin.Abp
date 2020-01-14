@@ -1,4 +1,4 @@
-﻿namespace Ec.Admin.Web.Pages
+﻿namespace Ec.Admin.Pages
 {
     public class IndexModel : AdminPageModel
     {

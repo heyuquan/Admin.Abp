@@ -1,12 +1,6 @@
-﻿using Ec.Admin.Application;
-using Ec.Admin.Application.Contracts;
-using Ec.Admin.Domain;
-using Ec.Admin.Domain.Shared;
-using Ec.Admin.Domain.Shared.Localization;
-using Ec.Admin.Domain.Shared.MultiTenancy;
-using Ec.Admin.EntityFrameworkCore;
-using Ec.Admin.HttpApi;
-using Ec.Admin.Web.Menus;
+﻿using Ec.Admin.Localization;
+using Ec.Admin.Menus;
+using Ec.Admin.MultiTenancy;
 using Localization.Resources.AbpUi;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -37,13 +31,14 @@ using Volo.Abp.UI.Navigation;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
 
-namespace Ec.Admin.Web
+namespace Ec.Admin
 {
     [DependsOn(
         typeof(AdminHttpApiModule),
         typeof(AdminApplicationModule),
         typeof(AdminEntityFrameworkCoreModule),
         typeof(AbpAutofacModule),
+        typeof(AbpAutoMapperModule),
         // 需要依赖框架的 AbpAspNetCoreModule ，进行aspnetcore相关的依赖注入
         typeof(AbpAspNetCoreModule),
         // 注册 Controller相关服务

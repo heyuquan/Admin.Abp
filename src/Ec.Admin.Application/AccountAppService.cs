@@ -1,13 +1,11 @@
-﻿using Ec.Admin.Application.Contracts;
-using Ec.Admin.Application.Contracts.DTO;
-using Ec.Admin.Domain;
-using Ec.Admin.Domain.AggregateRoot;
-using Ec.Admin.Domain.Service;
+﻿using Ec.Admin.AggregateRoot;
+using Ec.Admin.DTO;
+using Ec.Admin.Service;
 using System.Threading.Tasks;
 using Volo.Abp;
 using Volo.Abp.Application.Services;
 
-namespace Ec.Admin.Application
+namespace Ec.Admin
 {
 
     // 另一个可以直接操作数据的基类 AsyncCrudAppService

@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
-using Ec.Admin.Application.Contracts.DTO;
-using Ec.Admin.Domain;
-using Ec.Admin.Domain.AggregateRoot;
+using Ec.Admin.AggregateRoot;
+using Ec.Admin.DTO;
 
-namespace Ec.Admin.Application
+namespace Ec.Admin
 {
     public class AdminApplicationAutoMapperProfile : Profile
     {

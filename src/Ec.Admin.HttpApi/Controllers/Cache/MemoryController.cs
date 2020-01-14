@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Threading.Tasks;
 using Volo.Abp.AspNetCore.Mvc;
 
-namespace Ec.Admin.HttpApi.Controllers
+namespace Ec.Admin.Controllers.Cache
 {
     [Route("api/memorycache")]
     public class MemoryController : AbpController

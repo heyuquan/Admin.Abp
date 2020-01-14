@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Ec.Admin.EntityFrameworkCore.DbMigrations.Migrations
+namespace Ec.Admin.Migrations
 {
     [DbContext(typeof(AdminMigrationsDbContext))]
     [Migration("20191129070219_Initial")]

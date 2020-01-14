@@ -1,5 +1,5 @@
-﻿using Ec.Admin.Domain.AggregateRoot;
-using Ec.Admin.Domain.IRepository;
+﻿using Ec.Admin.AggregateRoot;
+using Ec.Admin.IRepository;
 using System;
 using System.Threading.Tasks;
 using Volo.Abp;
@@ -7,7 +7,7 @@ using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Domain.Services;
 
-namespace Ec.Admin.Domain.Service
+namespace Ec.Admin.Service
 {
     public class AccountManager : DomainService, IAccountManager, ISingletonDependency
     {

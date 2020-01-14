@@ -1,6 +1,4 @@
-﻿using Ec.Admin.Application;
-using Ec.Admin.EntityFrameworkCore;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
@@ -18,7 +16,7 @@ using Volo.Abp.Autofac;
 using Volo.Abp.Caching;
 using Volo.Abp.Modularity;
 
-namespace Ec.Admin.HttpApi.Host
+namespace Ec.Admin
 {
     [DependsOn(
         typeof(AdminHttpApiModule),

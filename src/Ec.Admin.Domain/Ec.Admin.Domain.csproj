@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <UserSecretsId>ee24236d-3185-4068-a96f-fea4a908bbd8</UserSecretsId>
+    <RootNamespace>Ec.Admin</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

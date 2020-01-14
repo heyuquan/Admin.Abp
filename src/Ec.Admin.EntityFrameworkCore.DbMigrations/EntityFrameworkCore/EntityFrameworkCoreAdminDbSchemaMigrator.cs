@@ -1,4 +1,4 @@
-﻿using Ec.Admin.Domain.Migration;
+﻿using Ec.Admin.Migrations;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using Volo.Abp.DependencyInjection;

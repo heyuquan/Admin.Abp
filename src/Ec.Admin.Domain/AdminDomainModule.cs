@@ -1,12 +1,11 @@
-﻿using Ec.Admin.Domain.Shared;
-using Ec.Admin.Domain.Shared.MultiTenancy;
+﻿using Ec.Admin.MultiTenancy;
 using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
 using Volo.Abp.MultiTenancy;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.PermissionManagement.Identity;
 
-namespace Ec.Admin.Domain
+namespace Ec.Admin
 {
     [DependsOn(
         typeof(AdminDomainSharedModule),
