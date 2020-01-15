@@ -31,6 +31,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ec.Admin.HttpApi.Client", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ec.Admin.Web", "src\Ec.Admin.Web\Ec.Admin.Web.csproj", "{0CCA7E1A-7E1D-48D4-A5B8-C57B2C0CCCA8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{D7945CC5-F27A-43E8-8944-F5A44D14101A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ec.Admin.IdentityServer.EntityFrameworkCore.DbMigrations", "src\Ec.Admin.IdentityServer.EntityFrameworkCore.DbMigrations\Ec.Admin.IdentityServer.EntityFrameworkCore.DbMigrations.csproj", "{678979C8-8A78-4E33-9EE9-9639153598F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ec.Admin.IdentityServer.Web", "src\Ec.Admin.IdentityServer.Web\Ec.Admin.IdentityServer.Web.csproj", "{C60D0091-9AAE-4437-A829-49CBCA43CC2A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ec.Admin.IdentityServer.DbMigrator", "src\Ec.Admin.IdentityServer.DbMigrator\Ec.Admin.IdentityServer.DbMigrator.csproj", "{C95FD61C-6E66-4060-B800-FD62B0999AE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,9 +89,26 @@ Global
 		{0CCA7E1A-7E1D-48D4-A5B8-C57B2C0CCCA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CCA7E1A-7E1D-48D4-A5B8-C57B2C0CCCA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CCA7E1A-7E1D-48D4-A5B8-C57B2C0CCCA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{678979C8-8A78-4E33-9EE9-9639153598F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{678979C8-8A78-4E33-9EE9-9639153598F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{678979C8-8A78-4E33-9EE9-9639153598F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{678979C8-8A78-4E33-9EE9-9639153598F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C60D0091-9AAE-4437-A829-49CBCA43CC2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C60D0091-9AAE-4437-A829-49CBCA43CC2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C60D0091-9AAE-4437-A829-49CBCA43CC2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C60D0091-9AAE-4437-A829-49CBCA43CC2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C95FD61C-6E66-4060-B800-FD62B0999AE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C95FD61C-6E66-4060-B800-FD62B0999AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C95FD61C-6E66-4060-B800-FD62B0999AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C95FD61C-6E66-4060-B800-FD62B0999AE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{678979C8-8A78-4E33-9EE9-9639153598F2} = {D7945CC5-F27A-43E8-8944-F5A44D14101A}
+		{C60D0091-9AAE-4437-A829-49CBCA43CC2A} = {D7945CC5-F27A-43E8-8944-F5A44D14101A}
+		{C95FD61C-6E66-4060-B800-FD62B0999AE0} = {D7945CC5-F27A-43E8-8944-F5A44D14101A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {750BCE7B-C78B-4847-A25C-6F1E1A411D10}
