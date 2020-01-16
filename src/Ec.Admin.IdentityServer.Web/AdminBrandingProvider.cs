@@ -6,6 +6,6 @@ namespace Ec.Admin.IdentityServer
     [Dependency(ReplaceServices = true)]
     public class AdminBrandingProvider : DefaultBrandingProvider
     {
-        public override string AppName => "Ec.Admin";
+        public override string AppName => "Ec.Admin.IdentityServer";
     }
 }

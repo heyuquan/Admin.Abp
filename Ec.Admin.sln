@@ -21,6 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{049CC62C-CBE
 	ProjectSection(SolutionItems) = preProject
 		doc\architecture instructions.txt = doc\architecture instructions.txt
 		doc\module-layers-and-packages-depends.jpg = doc\module-layers-and-packages-depends.jpg
+		doc\my_demo.txt = doc\my_demo.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ec.Admin.HttpApi.Host", "src\Ec.Admin.HttpApi.Host\Ec.Admin.HttpApi.Host.csproj", "{F10B273A-21CC-4CDA-814A-754597C9C3AB}"

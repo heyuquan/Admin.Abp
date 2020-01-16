@@ -33,11 +33,7 @@ namespace Ec.Admin.IdentityServer.EntityFrameworkCore
             builder.ConfigureIdentity();
             builder.ConfigurePermissionManagement();
             builder.ConfigureTenantManagement();
-            builder.ConfigureIdentityServer(options =>
-            {
-                options.Schema = "ids";
-                options.TablePrefix = AbpIdentityServerDbProperties.DbTablePrefix;
-            });
+            builder.ConfigureIdentityServer();
 
             /* Configure customizations for entities from the modules included  */
             builder.Entity<IdentityUser>(b =>

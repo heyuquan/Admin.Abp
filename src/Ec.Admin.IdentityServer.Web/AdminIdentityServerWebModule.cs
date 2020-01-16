@@ -82,7 +82,7 @@ namespace Ec.Admin.IdentityServer
             var configuration = context.Services.GetConfiguration();
 
             ConfigureUrls(configuration);
-            ConfigureIdentityCookieAuthentication(context, configuration);
+            ConfigureIdentityServerAuthentication(context, configuration);
             ConfigAutoMapper();
             ConfigureVirtualFileSystem(hostingEnvironment);
             ConfigureLocalizationServices();
@@ -99,21 +99,15 @@ namespace Ec.Admin.IdentityServer
             });
         }
 
-        private void ConfigureIdentityCookieAuthentication(ServiceConfigurationContext context, IConfiguration configuration)
+        private void ConfigureIdentityServerAuthentication(ServiceConfigurationContext context, IConfiguration configuration)
         {
-            // 有如下AbpIdentity定义后，还需要在 OnApplicationInitialization 中调用：app.UseAuthentication();
-            context.Services.AddAbpIdentity();
-
-            context.Services.ConfigureApplicationCookie(options =>
-            {
-                // Cookie settings
-                options.Cookie.HttpOnly = true;
-                options.Cookie.SameSite = SameSiteMode.None;
-                options.ExpireTimeSpan = System.TimeSpan.FromMinutes(5);
-
-                options.LoginPath = "/Account/Login";
-                options.SlidingExpiration = true;
-            });
+            context.Services.AddAuthentication()
+                .AddIdentityServerAuthentication(options =>
+                {
+                    options.Authority = configuration["AuthServer:Authority"];
+                    options.RequireHttpsMetadata = false;
+                    options.ApiName = "EcAdmin";
+                });
         }
 
         private void ConfigAutoMapper()
@@ -191,7 +185,7 @@ namespace Ec.Admin.IdentityServer
             services.AddSwaggerGen(
                 options =>
                 {
-                    options.SwaggerDoc("v1", new OpenApiInfo { Title = "Ec.Admin.Web", Version = "v1" });
+                    options.SwaggerDoc("v1", new OpenApiInfo { Title = "Ec.Admin.IdentityServer.Web", Version = "v1" });
                     options.DocInclusionPredicate((docName, description) => true);
                     options.CustomSchemaIds(type => type.FullName);
                 });
@@ -217,20 +211,22 @@ namespace Ec.Admin.IdentityServer
             app.UseRouting();
             // 认证
             app.UseAuthentication();
-            // 授权
-            app.UseAuthorization();
+            
 
             if (MultiTenancyConsts.IsEnabled)
             {
                 app.UseMultiTenancy();
             }
 
+            app.UseIdentityServer();
+            // 授权
+            app.UseAuthorization();
             app.UseAbpRequestLocalization();
 
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Ec.Admin.Web API");
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Ec.Admin.IdentityServer.Web API");
             });
 
             app.UseAuditing();

@@ -751,7 +751,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("IdentityServerApiResources","ids");
+                    b.ToTable("IdentityServerApiResources");
                 });
 
             modelBuilder.Entity("Volo.Abp.IdentityServer.ApiResources.ApiResourceClaim", b =>
@@ -765,7 +765,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasKey("ApiResourceId", "Type");
 
-                    b.ToTable("IdentityServerApiClaims","ids");
+                    b.ToTable("IdentityServerApiClaims");
                 });
 
             modelBuilder.Entity("Volo.Abp.IdentityServer.ApiResources.ApiScope", b =>
@@ -796,7 +796,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasKey("ApiResourceId", "Name");
 
-                    b.ToTable("IdentityServerApiScopes","ids");
+                    b.ToTable("IdentityServerApiScopes");
                 });
 
             modelBuilder.Entity("Volo.Abp.IdentityServer.ApiResources.ApiScopeClaim", b =>
@@ -814,7 +814,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasKey("ApiResourceId", "Name", "Type");
 
-                    b.ToTable("IdentityServerApiScopeClaims","ids");
+                    b.ToTable("IdentityServerApiScopeClaims");
                 });
 
             modelBuilder.Entity("Volo.Abp.IdentityServer.ApiResources.ApiSecret", b =>
@@ -839,7 +839,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasKey("ApiResourceId", "Type", "Value");
 
-                    b.ToTable("IdentityServerApiSecrets","ids");
+                    b.ToTable("IdentityServerApiSecrets");
                 });
 
             modelBuilder.Entity("Volo.Abp.IdentityServer.Clients.Client", b =>
@@ -1015,7 +1015,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasIndex("ClientId");
 
-                    b.ToTable("IdentityServerClients","ids");
+                    b.ToTable("IdentityServerClients");
                 });
 
             modelBuilder.Entity("Volo.Abp.IdentityServer.Clients.ClientClaim", b =>
@@ -1033,7 +1033,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasKey("ClientId", "Type", "Value");
 
-                    b.ToTable("IdentityServerClientClaims","ids");
+                    b.ToTable("IdentityServerClientClaims");
                 });
 
             modelBuilder.Entity("Volo.Abp.IdentityServer.Clients.ClientCorsOrigin", b =>
@@ -1047,7 +1047,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasKey("ClientId", "Origin");
 
-                    b.ToTable("IdentityServerClientCorsOrigins","ids");
+                    b.ToTable("IdentityServerClientCorsOrigins");
                 });
 
             modelBuilder.Entity("Volo.Abp.IdentityServer.Clients.ClientGrantType", b =>
@@ -1061,7 +1061,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasKey("ClientId", "GrantType");
 
-                    b.ToTable("IdentityServerClientGrantTypes","ids");
+                    b.ToTable("IdentityServerClientGrantTypes");
                 });
 
             modelBuilder.Entity("Volo.Abp.IdentityServer.Clients.ClientIdPRestriction", b =>
@@ -1075,7 +1075,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasKey("ClientId", "Provider");
 
-                    b.ToTable("IdentityServerClientIdPRestrictions","ids");
+                    b.ToTable("IdentityServerClientIdPRestrictions");
                 });
 
             modelBuilder.Entity("Volo.Abp.IdentityServer.Clients.ClientPostLogoutRedirectUri", b =>
@@ -1089,7 +1089,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasKey("ClientId", "PostLogoutRedirectUri");
 
-                    b.ToTable("IdentityServerClientPostLogoutRedirectUris","ids");
+                    b.ToTable("IdentityServerClientPostLogoutRedirectUris");
                 });
 
             modelBuilder.Entity("Volo.Abp.IdentityServer.Clients.ClientProperty", b =>
@@ -1108,7 +1108,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasKey("ClientId", "Key");
 
-                    b.ToTable("IdentityServerClientProperties","ids");
+                    b.ToTable("IdentityServerClientProperties");
                 });
 
             modelBuilder.Entity("Volo.Abp.IdentityServer.Clients.ClientRedirectUri", b =>
@@ -1122,7 +1122,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasKey("ClientId", "RedirectUri");
 
-                    b.ToTable("IdentityServerClientRedirectUris","ids");
+                    b.ToTable("IdentityServerClientRedirectUris");
                 });
 
             modelBuilder.Entity("Volo.Abp.IdentityServer.Clients.ClientScope", b =>
@@ -1136,7 +1136,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasKey("ClientId", "Scope");
 
-                    b.ToTable("IdentityServerClientScopes","ids");
+                    b.ToTable("IdentityServerClientScopes");
                 });
 
             modelBuilder.Entity("Volo.Abp.IdentityServer.Clients.ClientSecret", b =>
@@ -1161,7 +1161,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasKey("ClientId", "Type", "Value");
 
-                    b.ToTable("IdentityServerClientSecrets","ids");
+                    b.ToTable("IdentityServerClientSecrets");
                 });
 
             modelBuilder.Entity("Volo.Abp.IdentityServer.Grants.PersistedGrant", b =>
@@ -1211,7 +1211,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasIndex("SubjectId", "ClientId", "Type");
 
-                    b.ToTable("IdentityServerPersistedGrants","ids");
+                    b.ToTable("IdentityServerPersistedGrants");
                 });
 
             modelBuilder.Entity("Volo.Abp.IdentityServer.IdentityResources.IdentityClaim", b =>
@@ -1225,7 +1225,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasKey("IdentityResourceId", "Type");
 
-                    b.ToTable("IdentityServerIdentityClaims","ids");
+                    b.ToTable("IdentityServerIdentityClaims");
                 });
 
             modelBuilder.Entity("Volo.Abp.IdentityServer.IdentityResources.IdentityResource", b =>
@@ -1303,7 +1303,7 @@ namespace Ec.Admin.IdentityServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("IdentityServerIdentityResources","ids");
+                    b.ToTable("IdentityServerIdentityResources");
                 });
 
             modelBuilder.Entity("Volo.Abp.PermissionManagement.PermissionGrant", b =>

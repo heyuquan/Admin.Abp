@@ -7,9 +7,6 @@ namespace Ec.Admin.IdentityServer.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.EnsureSchema(
-                name: "ids");
-
             migrationBuilder.CreateTable(
                 name: "AbpAuditLogs",
                 columns: table => new
@@ -169,7 +166,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerApiResources",
-                schema: "ids",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
@@ -195,7 +191,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerClients",
-                schema: "ids",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
@@ -253,7 +248,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerIdentityResources",
-                schema: "ids",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
@@ -282,7 +276,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerPersistedGrants",
-                schema: "ids",
                 columns: table => new
                 {
                     Key = table.Column<string>(maxLength: 200, nullable: false),
@@ -503,7 +496,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerApiClaims",
-                schema: "ids",
                 columns: table => new
                 {
                     Type = table.Column<string>(maxLength: 200, nullable: false),
@@ -515,7 +507,6 @@ namespace Ec.Admin.IdentityServer.Migrations
                     table.ForeignKey(
                         name: "FK_IdentityServerApiClaims_IdentityServerApiResources_ApiResourceId",
                         column: x => x.ApiResourceId,
-                        principalSchema: "ids",
                         principalTable: "IdentityServerApiResources",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -523,7 +514,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerApiScopes",
-                schema: "ids",
                 columns: table => new
                 {
                     ApiResourceId = table.Column<Guid>(nullable: false),
@@ -540,7 +530,6 @@ namespace Ec.Admin.IdentityServer.Migrations
                     table.ForeignKey(
                         name: "FK_IdentityServerApiScopes_IdentityServerApiResources_ApiResourceId",
                         column: x => x.ApiResourceId,
-                        principalSchema: "ids",
                         principalTable: "IdentityServerApiResources",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -548,7 +537,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerApiSecrets",
-                schema: "ids",
                 columns: table => new
                 {
                     Type = table.Column<string>(maxLength: 250, nullable: false),
@@ -563,7 +551,6 @@ namespace Ec.Admin.IdentityServer.Migrations
                     table.ForeignKey(
                         name: "FK_IdentityServerApiSecrets_IdentityServerApiResources_ApiResourceId",
                         column: x => x.ApiResourceId,
-                        principalSchema: "ids",
                         principalTable: "IdentityServerApiResources",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -571,7 +558,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerClientClaims",
-                schema: "ids",
                 columns: table => new
                 {
                     ClientId = table.Column<Guid>(nullable: false),
@@ -584,7 +570,6 @@ namespace Ec.Admin.IdentityServer.Migrations
                     table.ForeignKey(
                         name: "FK_IdentityServerClientClaims_IdentityServerClients_ClientId",
                         column: x => x.ClientId,
-                        principalSchema: "ids",
                         principalTable: "IdentityServerClients",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -592,7 +577,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerClientCorsOrigins",
-                schema: "ids",
                 columns: table => new
                 {
                     ClientId = table.Column<Guid>(nullable: false),
@@ -604,7 +588,6 @@ namespace Ec.Admin.IdentityServer.Migrations
                     table.ForeignKey(
                         name: "FK_IdentityServerClientCorsOrigins_IdentityServerClients_ClientId",
                         column: x => x.ClientId,
-                        principalSchema: "ids",
                         principalTable: "IdentityServerClients",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -612,7 +595,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerClientGrantTypes",
-                schema: "ids",
                 columns: table => new
                 {
                     ClientId = table.Column<Guid>(nullable: false),
@@ -624,7 +606,6 @@ namespace Ec.Admin.IdentityServer.Migrations
                     table.ForeignKey(
                         name: "FK_IdentityServerClientGrantTypes_IdentityServerClients_ClientId",
                         column: x => x.ClientId,
-                        principalSchema: "ids",
                         principalTable: "IdentityServerClients",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -632,7 +613,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerClientIdPRestrictions",
-                schema: "ids",
                 columns: table => new
                 {
                     ClientId = table.Column<Guid>(nullable: false),
@@ -644,7 +624,6 @@ namespace Ec.Admin.IdentityServer.Migrations
                     table.ForeignKey(
                         name: "FK_IdentityServerClientIdPRestrictions_IdentityServerClients_ClientId",
                         column: x => x.ClientId,
-                        principalSchema: "ids",
                         principalTable: "IdentityServerClients",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -652,7 +631,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerClientPostLogoutRedirectUris",
-                schema: "ids",
                 columns: table => new
                 {
                     ClientId = table.Column<Guid>(nullable: false),
@@ -664,7 +642,6 @@ namespace Ec.Admin.IdentityServer.Migrations
                     table.ForeignKey(
                         name: "FK_IdentityServerClientPostLogoutRedirectUris_IdentityServerClients_ClientId",
                         column: x => x.ClientId,
-                        principalSchema: "ids",
                         principalTable: "IdentityServerClients",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -672,7 +649,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerClientProperties",
-                schema: "ids",
                 columns: table => new
                 {
                     ClientId = table.Column<Guid>(nullable: false),
@@ -685,7 +661,6 @@ namespace Ec.Admin.IdentityServer.Migrations
                     table.ForeignKey(
                         name: "FK_IdentityServerClientProperties_IdentityServerClients_ClientId",
                         column: x => x.ClientId,
-                        principalSchema: "ids",
                         principalTable: "IdentityServerClients",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -693,7 +668,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerClientRedirectUris",
-                schema: "ids",
                 columns: table => new
                 {
                     ClientId = table.Column<Guid>(nullable: false),
@@ -705,7 +679,6 @@ namespace Ec.Admin.IdentityServer.Migrations
                     table.ForeignKey(
                         name: "FK_IdentityServerClientRedirectUris_IdentityServerClients_ClientId",
                         column: x => x.ClientId,
-                        principalSchema: "ids",
                         principalTable: "IdentityServerClients",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -713,7 +686,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerClientScopes",
-                schema: "ids",
                 columns: table => new
                 {
                     ClientId = table.Column<Guid>(nullable: false),
@@ -725,7 +697,6 @@ namespace Ec.Admin.IdentityServer.Migrations
                     table.ForeignKey(
                         name: "FK_IdentityServerClientScopes_IdentityServerClients_ClientId",
                         column: x => x.ClientId,
-                        principalSchema: "ids",
                         principalTable: "IdentityServerClients",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -733,7 +704,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerClientSecrets",
-                schema: "ids",
                 columns: table => new
                 {
                     Type = table.Column<string>(maxLength: 250, nullable: false),
@@ -748,7 +718,6 @@ namespace Ec.Admin.IdentityServer.Migrations
                     table.ForeignKey(
                         name: "FK_IdentityServerClientSecrets_IdentityServerClients_ClientId",
                         column: x => x.ClientId,
-                        principalSchema: "ids",
                         principalTable: "IdentityServerClients",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -756,7 +725,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerIdentityClaims",
-                schema: "ids",
                 columns: table => new
                 {
                     Type = table.Column<string>(maxLength: 200, nullable: false),
@@ -768,7 +736,6 @@ namespace Ec.Admin.IdentityServer.Migrations
                     table.ForeignKey(
                         name: "FK_IdentityServerIdentityClaims_IdentityServerIdentityResources_IdentityResourceId",
                         column: x => x.IdentityResourceId,
-                        principalSchema: "ids",
                         principalTable: "IdentityServerIdentityResources",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -799,7 +766,6 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateTable(
                 name: "IdentityServerApiScopeClaims",
-                schema: "ids",
                 columns: table => new
                 {
                     Type = table.Column<string>(maxLength: 200, nullable: false),
@@ -812,7 +778,6 @@ namespace Ec.Admin.IdentityServer.Migrations
                     table.ForeignKey(
                         name: "FK_IdentityServerApiScopeClaims_IdentityServerApiScopes_ApiResourceId_Name",
                         columns: x => new { x.ApiResourceId, x.Name },
-                        principalSchema: "ids",
                         principalTable: "IdentityServerApiScopes",
                         principalColumns: new[] { "ApiResourceId", "Name" },
                         onDelete: ReferentialAction.Cascade);
@@ -915,19 +880,16 @@ namespace Ec.Admin.IdentityServer.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_IdentityServerClients_ClientId",
-                schema: "ids",
                 table: "IdentityServerClients",
                 column: "ClientId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_IdentityServerPersistedGrants_Expiration",
-                schema: "ids",
                 table: "IdentityServerPersistedGrants",
                 column: "Expiration");
 
             migrationBuilder.CreateIndex(
                 name: "IX_IdentityServerPersistedGrants_SubjectId_ClientId_Type",
-                schema: "ids",
                 table: "IdentityServerPersistedGrants",
                 columns: new[] { "SubjectId", "ClientId", "Type" });
         }
@@ -968,60 +930,46 @@ namespace Ec.Admin.IdentityServer.Migrations
                 name: "EcUserInfo");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerApiClaims",
-                schema: "ids");
+                name: "IdentityServerApiClaims");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerApiScopeClaims",
-                schema: "ids");
+                name: "IdentityServerApiScopeClaims");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerApiSecrets",
-                schema: "ids");
+                name: "IdentityServerApiSecrets");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerClientClaims",
-                schema: "ids");
+                name: "IdentityServerClientClaims");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerClientCorsOrigins",
-                schema: "ids");
+                name: "IdentityServerClientCorsOrigins");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerClientGrantTypes",
-                schema: "ids");
+                name: "IdentityServerClientGrantTypes");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerClientIdPRestrictions",
-                schema: "ids");
+                name: "IdentityServerClientIdPRestrictions");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerClientPostLogoutRedirectUris",
-                schema: "ids");
+                name: "IdentityServerClientPostLogoutRedirectUris");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerClientProperties",
-                schema: "ids");
+                name: "IdentityServerClientProperties");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerClientRedirectUris",
-                schema: "ids");
+                name: "IdentityServerClientRedirectUris");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerClientScopes",
-                schema: "ids");
+                name: "IdentityServerClientScopes");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerClientSecrets",
-                schema: "ids");
+                name: "IdentityServerClientSecrets");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerIdentityClaims",
-                schema: "ids");
+                name: "IdentityServerIdentityClaims");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerPersistedGrants",
-                schema: "ids");
+                name: "IdentityServerPersistedGrants");
 
             migrationBuilder.DropTable(
                 name: "AbpEntityChanges");
@@ -1039,23 +987,19 @@ namespace Ec.Admin.IdentityServer.Migrations
                 name: "EcRole");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerApiScopes",
-                schema: "ids");
+                name: "IdentityServerApiScopes");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerClients",
-                schema: "ids");
+                name: "IdentityServerClients");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerIdentityResources",
-                schema: "ids");
+                name: "IdentityServerIdentityResources");
 
             migrationBuilder.DropTable(
                 name: "AbpAuditLogs");
 
             migrationBuilder.DropTable(
-                name: "IdentityServerApiResources",
-                schema: "ids");
+                name: "IdentityServerApiResources");
         }
     }
 }
