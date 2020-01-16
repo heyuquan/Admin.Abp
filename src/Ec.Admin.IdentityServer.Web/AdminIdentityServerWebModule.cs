@@ -211,7 +211,7 @@ namespace Ec.Admin.IdentityServer
             app.UseRouting();
             // 认证
             app.UseAuthentication();
-            
+            app.UseJwtTokenMiddleware();
 
             if (MultiTenancyConsts.IsEnabled)
             {
