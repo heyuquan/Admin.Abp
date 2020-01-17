@@ -14,6 +14,12 @@ ABP框架的主要目标之一就是提供便捷的基础设施来创建微服务解决方案
 	Tenant Management: 用于管理多租户应用程序的租户.
 	Users: 用于抽象用户, 因此其他模块可以依赖此模块而不是Identity模块.
 
+实体转化
+	表现层：viewModel >> input
+	应用层：输入input，输出output   （或Dto）
+	领域层：参数不再封装为对象，只有参数比较多时才封装对象。
+	        但可以直接传递应用层（input|output|dto）参数（避免再多一层对象转换，）
+
 Abp Cli==================
 dotnet tool install -g Volo.Abp.Cli
 dotnet tool update -g Volo.Abp.Cli

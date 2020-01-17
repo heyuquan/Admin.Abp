@@ -54,7 +54,7 @@ namespace Ec.Admin.IdentityServer
         // 多语言
         typeof(AbpLocalizationModule),
         // module
-        typeof(AbpAccountWebModule),
+        typeof(AbpAccountWebIdentityServerModule),
         typeof(AbpIdentityWebModule),
         typeof(AbpPermissionManagementWebModule),
         typeof(AbpTenantManagementWebModule)
