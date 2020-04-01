@@ -48,7 +48,10 @@ HTTP 层(Distributed Services Layers)
 		#、定义Controller
 	Ec.Admin.HttpApi.Client		为HTTP API包提供客户端服务的HTTP API Client包。使用Abp的动态API客户端(Volo.Abp.Http.Client)
 		HTTP API Client 包仅依赖于 Application.Contracts 包.
-	
+
+HTTP 层 和 Web 层，只能注入 应用服务层 提供的服务。一般来说应用服务层公开的api就可以满足需要。但有些情况如app、pc、h5各个环境
+下返回的data需要特殊处理的，就在 HTTP 层 和 Web 层 处理
+
 
 应用服务层(Application Layer)
 	Ec.Admin.Application				包含应用服务实现.依赖于 Domain 包和 Application.Contracts 包
