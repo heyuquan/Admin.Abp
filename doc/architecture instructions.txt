@@ -35,6 +35,9 @@ abp new Acme.BookStore [--output-folder D:\……]
 
 模块化架构最佳实践 & 约定
 https://docs.abp.io/zh-Hans/abp/latest/Best-Practices/Module-Architecture
+
+对于应用层和领域层实现的接口，都定义为virtual，方便重写，再替换IOC
+ABP框架使用动态代理/拦截系统来执行验证.为了使其工作,你的方法应该是 virtual 的,服务应该被注入并通过接口(如IMyService)使用.----（IValidatableObject）
 分层说明================
 Web 层(Presentation Layer)
 	表现层：可依赖 *.Application 包，*.Domain.Shared 包，*.EntityFrameworkCore 包，*.HttpApi 包
